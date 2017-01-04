@@ -11,6 +11,10 @@ map <leader>n :NERDTreeToggle<CR>
 " Mouse mode
 set mouse=a
 
+" Clipboard
+vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+
 " Splits
 nmap <leader>es :sp <C-R>=expand('%:h').'./'<cr>
 nmap <leader>ev :vsp <C-R>=expand('%:h').'./'<cr>
