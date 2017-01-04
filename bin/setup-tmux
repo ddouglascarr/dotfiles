@@ -1,0 +1,26 @@
+#!/bin/bash
+set -o nounset -o pipefail
+
+HOME_DIR=/home/daniel
+IVET_DIR=/src/ivet-mobile
+ROOSET_DIR=/src/rooset-domain
+
+tmux has-session -t ivet
+if [ $? != 0 ]
+then
+  tmux new-session -s ivet -n scratch -d
+  tmux new-window -n testing -t ivet -c ${HOME_DIR}${IVET_DIR} -d
+  tmux split-window -h -t ivet:testing -c ${HOME_DIR}${IVET_DIR} -d
+  tmux new-window -n dev -t ivet -c ${HOME_DIR}${IVET_DIR} -d
+  tmux split-window -h -t ivet:dev -c ${HOME_DIR}${IVET_DIR} -d
+  tmux new-window -n misc -t ivet -c ${HOME_DIR}${IVET_DIR} -d
+fi
+
+tmux has-session -t rooset
+if [ $? != 0 ]
+then
+  tmux new-session -s rooset -n scratch -d
+  tmux new-window -n build -t rooset -c ${HOME_DIR}${ROOSET_DIR} -d
+  tmux split-window -h -t rooset:build -c ${HOME_DIR}${ROOSET_DIR}/build -d
+  tmux new-window -n dev -t rooset -c ${HOME_DIR}${ROOSET_DIR} -d
+fi
