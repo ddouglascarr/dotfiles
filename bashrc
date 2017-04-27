@@ -116,9 +116,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-react-native-utils:/home/daniel/src/my-utils
+export PATH=$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-react-native-utils:/home/daniel/src/my-utils:/home/daniel/.local/bin
 export ANDROID_HOME=~/Android/Sdk
 export ANDROID_NDK=~/Android/Ndk
 
 # Runtime setup
 ~/src/dotfiles/bin/setup-tmux
+source ~/src/dotfiles/bin/virtualenv.sh
+
+export NVM_DIR="/home/daniel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

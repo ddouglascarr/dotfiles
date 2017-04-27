@@ -40,6 +40,10 @@ set number
 " smart case search
 set ignorecase
 
+syntax on
+set nocompatible
+filetype plugin indent on
+
 " uuid hotkeys
 " imap <C-i>1 464b1ebb-32c1-460c-8e9e-111111111111
 " imap <C-i>2 464b1ebb-32c1-460c-8e9e-222222222222
