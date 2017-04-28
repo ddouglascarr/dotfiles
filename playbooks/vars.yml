@@ -1,0 +1,17 @@
+
+debian_system_packages:
+  - build-essential
+  - curl
+  - ffmpeg
+  - git
+  - git-flow
+  - htop
+  - jq
+  - postgresql
+  - powertop
+  - tmux
+  - vim
+  - silversearcher-ag
+
+debian_gui_packages:
+  - meld

@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  any_errors_fatal: true
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: install-packages
+      become: yes
+      apt: pkg={{ item }} update-cache=yes
+      with_items: "{{ debian_gui_packages }}"
