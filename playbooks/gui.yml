@@ -4,9 +4,28 @@
   any_errors_fatal: true
   vars_files:
     - vars.yml
+  vars:
+    intellij_version: 2017.1.2
 
   tasks:
     - name: install-packages
       become: yes
       apt: pkg={{ item }} update-cache=yes
       with_items: "{{ debian_gui_packages }}"
+
+    - name: install-debs
+      become: yes
+      apt: deb={{ item }} update-cache=yes
+      with_items: "{{ debian_gui_deb_urls }}"
+
+    - name: create-home-opt-dir
+      file:
+        path: "{{ home_dir }}/{{ home_opt_dir }}"
+        state: directory
+        mode: 0755
+
+    - name: install-intellij
+      unarchive:
+        src: "https://download.jetbrains.com/idea/ideaIC-{{ intellij_version }}.tar.gz"
+        dest: /home/daniel/{{ home_opt_dir }}
+        remote_src: true
