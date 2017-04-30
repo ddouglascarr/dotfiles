@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eou pipefail
+
+openvpn --config "/home/daniel/opt/openvpn/${@}.ovpn" \
+  --script-security 2 \
+  --dhcp-option "DNS 8.8.8.8" \
+  --auth-user-pass creds.conf \
+  --up /etc/openvpn/update-resolv-conf \
+  --down /etc/openvpn/update-resolv-conf
+

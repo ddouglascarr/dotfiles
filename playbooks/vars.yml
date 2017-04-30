@@ -16,9 +16,12 @@ debian_system_packages:
   - tmux
   - vim
   - silversearcher-ag
+  - lynx
 
 debian_gui_packages:
   - meld
+  - vlc
+  - calibre
 
 debian_gui_deb_urls:
   - https://atom.io/download/deb
