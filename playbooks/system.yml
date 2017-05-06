@@ -8,6 +8,8 @@
     debian_system_packages:
       - build-essential
       - curl
+      - debian-archive-keyring
+      - apt-transport-https
       - ffmpeg
       - git
       - git-flow
@@ -20,9 +22,7 @@
       - vim
       - silversearcher-ag
       - lynx
-    debian_gui_deb_urls:
-      - https://atom.io/download/deb
-
+    elasticsearch_version: 5.1.11
 
 
   tasks:
@@ -30,3 +30,40 @@
       become: yes
       apt: pkg={{ item }} update-cache=yes
       with_items: "{{ debian_system_packages }}"
+      tags:
+        - packages
+
+    - name: add-geteventstore-apt-key
+      become: yes
+      apt_key:
+        url: "https://packagecloud.io/EventStore/EventStore-OSS/gpgkey"
+        state: present
+      tags:
+        - geteventstore
+
+    - name: add-geteventstore-repo
+      become: yes
+      apt_repository:
+        repo: deb https://packagecloud.io/EventStore/EventStore-OSS/ubuntu/ xenial main
+        state: present
+      tags: 
+        - geteventstore
+
+    - name: install-geteventstore
+      become: yes
+      apt:
+        update-cache: yes
+        pkg: eventstore-oss
+      tags: 
+        - geteventstore
+
+    - name: install-elasticsearch
+      become: yes
+      unarchive:
+        src: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz"
+        dest: /opt
+        remote_src: true
+      tags:
+        - elasticsearch
+
+    

@@ -11,6 +11,8 @@
       - vlc
       - calibre
       - maven
+    debian_gui_deb_urls:
+      - https://atom.io/download/deb
 
   tasks:
     - name: install-packages
