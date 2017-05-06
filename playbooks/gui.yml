@@ -6,12 +6,19 @@
     - vars.yml
   vars:
     intellij_version: 2017.1.2
+    debian_gui_packages:
+      - meld
+      - vlc
+      - calibre
+      - maven
 
   tasks:
     - name: install-packages
       become: yes
       apt: pkg={{ item }} update-cache=yes
       with_items: "{{ debian_gui_packages }}"
+      tags:
+        - packages
 
     - name: install-debs
       become: yes

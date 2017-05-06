@@ -3,26 +3,4 @@ home_dir: /home/daniel
 home_projects_dir: src
 home_opt_dir: opt
 
-debian_system_packages:
-  - build-essential
-  - curl
-  - ffmpeg
-  - git
-  - git-flow
-  - htop
-  - jq
-  - postgresql
-  - powertop
-  - tmux
-  - vim
-  - silversearcher-ag
-  - lynx
-
-debian_gui_packages:
-  - meld
-  - vlc
-  - calibre
-
-debian_gui_deb_urls:
-  - https://atom.io/download/deb
 

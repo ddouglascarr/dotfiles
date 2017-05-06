@@ -4,6 +4,26 @@
   any_errors_fatal: true
   vars_files:
     - vars.yml
+  vars:
+    debian_system_packages:
+      - build-essential
+      - curl
+      - ffmpeg
+      - git
+      - git-flow
+      - htop
+      - jq
+      - maven
+      - postgresql
+      - powertop
+      - tmux
+      - vim
+      - silversearcher-ag
+      - lynx
+    debian_gui_deb_urls:
+      - https://atom.io/download/deb
+
+
 
   tasks:
     - name: Install packages
