@@ -57,13 +57,51 @@
       tags: 
         - geteventstore
 
-    - name: install-elasticsearch
+    - name: add-elasticsearch-apt-key
       become: yes
-      unarchive:
-        src: "https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-5.1.1.tar.gz"
-        dest: /opt
-        remote_src: true
+      apt_key:
+        state: present
+        url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
       tags:
         - elasticsearch
 
+    - name: add-elasticsearch-repo
+      become: yes
+      apt_repository:
+        state: present
+        repo: deb https://artifacts.elastic.co/packages/5.x/apt stable main
+      tags:
+        - elasticsearch
+
+    - name: install-elasticsearch
+      become: yes
+      apt:
+        update-cache: yes
+        pkg: elasticsearch
+      tags:
+        - elasticsearch
     
+    - name: add-yarn-apt-key
+      become: yes
+      apt_key:
+        state: present
+        url: "https://dl.yarnpkg.com/debian/pubkey.gpg"
+      tags:
+        - yarn
+
+    - name: add-yarn-repo
+      become: yes
+      apt_repository:
+        state: present
+        repo: "deb https://dl.yarnpkg.com/debian/ stable main"
+      tags:
+        - yarn
+
+    - name: install-yarn
+      become: yes
+      apt:
+        update-cache: yes
+        pkg: yarn
+      tags:
+        - yarn
+
