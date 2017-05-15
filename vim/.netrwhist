@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/home/daniel/src/edrolo-infrastructure/ansible'
-let g:netrw_dirhist_2='/home/daniel/src/edrolo/tod_project/tod_django/react/cypress'
-let g:netrw_dirhist_3='/home/daniel/src/edrolo/tod_project/utils'

@@ -22,6 +22,7 @@
       - vim
       - silversearcher-ag
       - lynx
+      - weechat
     elasticsearch_version: 5.1.11
 
 
