@@ -26,6 +26,8 @@
   nuclide:
     "nuclide-home":
       showHome: false
+  "vim-mode":
+    useSmartcaseForSearch: true
   "vim-mode-plus":
     ignoreCaseForSearch: true
     incrementalSearch: true
