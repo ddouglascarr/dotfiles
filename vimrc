@@ -40,6 +40,9 @@ set relativenumber
 " smart case search
 set ignorecase
 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 syntax on
 set nocompatible
 filetype plugin indent on
@@ -63,4 +66,6 @@ filetype plugin indent on
 " imap <C-i>f 464b1ebb-32c1-460c-8e9e-ffffffffffff
 
 
-
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+set wildignore+=*/node_modules/*

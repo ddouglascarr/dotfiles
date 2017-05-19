@@ -13,3 +13,6 @@
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
 	url = git@github.com:flowtype/vim-flow.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim
