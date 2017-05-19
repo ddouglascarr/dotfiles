@@ -18,7 +18,9 @@
       - maven
       - postgresql
       - powertop
+      - pwgen
       - tmux
+      - uuid-runtime
       - vim
       - silversearcher-ag
       - lynx
