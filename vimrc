@@ -68,7 +68,10 @@ filetype plugin indent on
 " Javascript formatting
 let g:javascript_plugin_flow = 1
 
+" Vim-flow
+let g:flow#autoclose = 1
+
 " CtrlP
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*

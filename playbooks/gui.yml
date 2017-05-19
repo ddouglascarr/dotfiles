@@ -11,6 +11,7 @@
       - vlc
       - calibre
       - maven
+      - alacarte
     debian_gui_deb_urls:
       - https://atom.io/download/deb
 
