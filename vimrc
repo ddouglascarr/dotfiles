@@ -65,7 +65,10 @@ filetype plugin indent on
 " imap <C-i>e 464b1ebb-32c1-460c-8e9e-eeeeeeeeeeee
 " imap <C-i>f 464b1ebb-32c1-460c-8e9e-ffffffffffff
 
+" Javascript formatting
+let g:javascript_plugin_flow = 1
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'c'
 set wildignore+=*/node_modules/*
