@@ -25,6 +25,8 @@
       - silversearcher-ag
       - lynx
       - weechat
+      - python-dev
+      - python3-dev
     elasticsearch_version: 5.1.11
 
 
