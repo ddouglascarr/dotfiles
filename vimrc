@@ -84,3 +84,8 @@ let g:flow#autoclose = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
+
+" YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_goto_buffer_command = 'vertical-split'
+nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>

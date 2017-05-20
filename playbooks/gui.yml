@@ -7,11 +7,12 @@
   vars:
     intellij_version: 2017.1.2
     debian_gui_packages:
-      - meld
-      - vlc
+      - alacarte
       - calibre
       - maven
-      - alacarte
+      - meld
+      - vlc
+      - xclip
     debian_gui_deb_urls:
       - https://atom.io/download/deb
 
