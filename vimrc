@@ -89,3 +89,16 @@ set wildignore+=*/node_modules/*,*/build/*
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar' : 1,
+      \ 'qf' : 1,
+      \ 'notes' : 1,
+      \ 'markdown' : 1,
+      \ 'unite' : 1,
+      \ 'text' : 1,
+      \ 'vimwiki' : 1,
+      \ 'pandoc' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1,
+      \ 'javascript': 1,
+      \}
