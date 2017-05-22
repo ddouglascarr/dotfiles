@@ -17,7 +17,10 @@ BASE_FLAGS = [
         '-std=c++14',
         '-xc++',
         '-I/usr/lib/',
-        '-I/usr/include/'
+        '-I/usr/include/',
+        '-I/home/daniel/src/rooset/deps/rapidjson/include',
+        '-I/home/daniel/src/rooset/rooset-domain-command-posix/gen',
+        '-I/home/daniel/src/rooset/rooset-application-toolkit/languages/cpp/include'
         ]
 
 SOURCE_EXTENSIONS = [

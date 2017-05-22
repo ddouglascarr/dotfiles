@@ -6,6 +6,7 @@
     - vars.yml
   vars:
     debian_system_packages:
+      - apt-file
       - build-essential
       - curl
       - debian-archive-keyring
@@ -15,6 +16,8 @@
       - git-flow
       - htop
       - jq
+      - libr3-0
+      - libr3-dev
       - maven
       - postgresql
       - powertop

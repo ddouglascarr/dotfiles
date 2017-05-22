@@ -1,6 +1,7 @@
 #!/bin/bash
 set -o nounset -o pipefail
 
+source ~/.bashrc
 HOME_DIR=/home/daniel
 IVET_DIR=/src/ivet-mobile
 ROOSET_DIR=/src/rooset

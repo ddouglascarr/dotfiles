@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -57,9 +57,39 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\w\[\033[00m\]\$ '
+    # PS1='\w\[\033[00m\]\$ '
+    # A two-line colored Bash prompt (PS1) with Git branch and a line decoration
+    # which adjusts automatically to the width of the terminal.
+    # Recognizes and shows Git, SVN and Fossil branch/revision.
+    # Screenshot: http://img194.imageshack.us/img194/2154/twolineprompt.png
+    # Michal Kottman, 2012
+     
+    RESET="\[\033[0m\]"
+    RED="\[\033[0;31m\]"
+    GREEN="\[\033[01;32m\]"
+    BLUE="\[\033[01;34m\]"
+    YELLOW="\[\033[0;33m\]"
+     
+    PS_LINE=`printf -- '- %.0s' {1..200}`
+    function parse_git_branch {
+      PS_BRANCH=''
+      if [ -d .svn ]; then
+        PS_BRANCH="(svn r$(svn info|awk '/Revision/{print $2}'))"
+        return
+      elif [ -f _FOSSIL_ -o -f .fslckout ]; then
+        PS_BRANCH="(fossil $(fossil status|awk '/tags/{print $2}')) "
+        return
+      fi
+      ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+      PS_BRANCH="(⎇  ${ref#refs/heads/}) "
+    }
+    PROMPT_COMMAND=parse_git_branch
+    PS_INFO="  $BLUE\w"
+    PS_GIT="$YELLOW\$PS_BRANCH"
+    PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"
+    PS1="${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}\$ "
 else
-    PS1='\w\$ '
+  PS1='\w\$ '
 fi
 unset color_prompt force_color_prompt
 
