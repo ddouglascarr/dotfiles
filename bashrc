@@ -69,6 +69,7 @@ if [ "$color_prompt" = yes ]; then
     GREEN="\[\033[01;32m\]"
     BLUE="\[\033[01;34m\]"
     YELLOW="\[\033[0;33m\]"
+    WHITE="\[\033[1;37m\]"
      
     PS_LINE=`printf -- '- %.0s' {1..200}`
     function parse_git_branch {
@@ -87,7 +88,7 @@ if [ "$color_prompt" = yes ]; then
     PS_INFO="  $BLUE\w"
     PS_GIT="$YELLOW\$PS_BRANCH"
     PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"
-    PS1="${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}\$ "
+    PS1="${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}${WHITE}\$${RESET} "
 else
   PS1='\w\$ '
 fi
