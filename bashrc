@@ -88,7 +88,7 @@ if [ "$color_prompt" = yes ]; then
     PS_INFO="  $BLUE\w"
     PS_GIT="$YELLOW\$PS_BRANCH"
     PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"
-    PS1="${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}${WHITE}\$${RESET} "
+    PS1="${PS_INFO} ${PS_GIT}${PS_TIME}\n${RESET}${BLUE}\$${RESET} "
 else
   PS1='\w\$ '
 fi
