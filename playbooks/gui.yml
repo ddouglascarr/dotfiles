@@ -13,6 +13,7 @@
       - meld
       - vlc
       - xclip
+      - youtube-dl
     debian_gui_deb_urls:
       - https://atom.io/download/deb
 

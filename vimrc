@@ -8,6 +8,8 @@ set directory=/tmp,.
 
 
 map <leader>n :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
+let NERDTreeShowHidden=1
 
 " Mouse mode
 set mouse=a
