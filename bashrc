@@ -82,7 +82,7 @@ if [ "$color_prompt" = yes ]; then
         return
       fi
       ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-      PS_BRANCH="(⎇  ${ref#refs/heads/}) "
+      PS_BRANCH="⎇  ${ref#refs/heads/} "
     }
     PROMPT_COMMAND=parse_git_branch
     PS_INFO="  $BLUE\w"
@@ -156,5 +156,9 @@ export ANDROID_NDK=~/Android/Ndk
 source ~/src/dotfiles/bin/virtualenv.sh
 
 export NVM_DIR="/home/daniel/.nvm"
+export NODE_DEFAULT_VERSION=6.10
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+nvm use $NODE_DEFAULT_VERSION
+
 source virtualenvwrapper.sh
+export PYTHONDONTWRITEBYTECODE=1
