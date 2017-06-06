@@ -6,18 +6,40 @@ HOME_DIR=/home/daniel
 IVET_DIR=/src/ivet-mobile
 ROOSET_DIR=/src/rooset
 
-tmux has-session -t ivet
+function send-workon-edrolo {
+  window_num=$@
+  tmux send-keys -t edrolo:${window_num} "workon edrolo" Enter
+}
+
+tmux has-session -t edrolo &> /dev/null
 if [ $? != 0 ]
 then
-  tmux new-session -s ivet -n scratch -d
-  tmux new-window -n testing -t ivet -c ${HOME_DIR}${IVET_DIR} -d
-  tmux split-window -h -t ivet:testing -c ${HOME_DIR}${IVET_DIR} -d
-  tmux new-window -n dev -t ivet -c ${HOME_DIR}${IVET_DIR} -d
-  tmux split-window -h -t ivet:dev -c ${HOME_DIR}${IVET_DIR} -d
-  tmux new-window -n misc -t ivet -c ${HOME_DIR}${IVET_DIR} -d
+  tmux new-session -s edrolo -n scratch -d
+  send-workon-edrolo 0
+
+  tmux new-window -n manage -t edrolo:1 
+  send-workon-edrolo 1
+
+  tmux new-window -n webpack -t edrolo:2 
+  send-workon-edrolo 2
+  
+  tmux new-window -n "dev-1" -t edrolo:3
+  send-workon-edrolo "dev-1"
+  
+  tmux new-window -n "dev-2" -t edrolo:4 
+  send-workon-edrolo "dev-2"
+  
+  tmux new-window -n "dev-3" -t edrolo:5
+  send-workon-edrolo "dev-3"
+  
+  tmux new-window -n "dev-4" -t edrolo:6 
+  send-workon-edrolo "dev-4"
+  
+  tmux new-window -n "dev-5" -t edrolo:7 
+  send-workon-edrolo "dev-5"
 fi
 
-tmux has-session -t rooset
+tmux has-session -t rooset &> /dev/null
 if [ $? != 0 ]
 then
   tmux new-session -s rooset -n scratch -d
