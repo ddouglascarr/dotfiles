@@ -115,3 +115,27 @@
       tags:
         - yarn
 
+    - name: add-sbt-apt-key
+      become: yes
+      apt_key:
+        id: 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+        keyserver: keyserver.ubuntu.com
+        state: present
+      tags:
+        - scala
+
+    - name: add-sbt-repo
+      become: yes
+      apt_repository:
+        state: present
+        repo: "deb https://dl.bintray.com/sbt/debian /"
+      tags:
+        - scala
+
+    - name: install-scala
+      become: yes
+      apt:
+        update-cache: yes
+        pkg: sbt
+      tags:
+        - scala
