@@ -1,0 +1,5 @@
+evdev:input:dmi:bvn*:bvr*:bd*:svn*:pn20J6CTO1WW:pvr*
+ KEYBOARD_KEY_56=leftshift
+ KEYBOARD_KEY_01=super
+ KEYBOARD_KEY_3a=escape
+ 

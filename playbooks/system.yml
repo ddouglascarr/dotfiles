@@ -22,10 +22,12 @@
       - postgresql
       - powertop
       - pwgen
+      - redis-server
       - tmux
       - uuid-runtime
       - vim
       - silversearcher-ag
+      - unrar
       - lynx
       - weechat
       - python-dev

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+tail -f /var/log/postgresql/postgresql-9.6-main.log
