@@ -81,6 +81,10 @@ filetype plugin indent on
 
 " Javascript formatting
 let g:javascript_plugin_flow = 1
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 
 " Vim-flow
 let g:flow#autoclose = 1
@@ -109,9 +113,9 @@ let g:ycm_filetype_blacklist = {
       \}
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -121,3 +125,10 @@ let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 
 let g:elm_syntastic_show_warnings = 1
+
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'jsx': ['eslint'],
+\}
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
