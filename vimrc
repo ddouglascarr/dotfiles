@@ -1,6 +1,8 @@
 let mapleader = ' '
 call pathogen#infect()
 
+" fzf
+set rtp+=~/.fzf
 
 " Put swp files in /tmp
 set backupdir=/tmp
@@ -16,7 +18,7 @@ set mouse=a
 
 " Clipboard
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+nmap <S-Insert> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 " Splits
 nmap <leader>es :sp <C-R>=expand('%:h').'./'<cr>
@@ -117,3 +119,5 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
+
+let g:elm_syntastic_show_warnings = 1

@@ -162,3 +162,5 @@ nvm use $NODE_DEFAULT_VERSION
 
 source virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

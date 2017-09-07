@@ -31,3 +31,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/vim-syntastic/syntastic
+[submodule "vim/bundle/elm-vim"]
+	path = vim/bundle/elm-vim
+	url = https://github.com/ElmCast/elm-vim
