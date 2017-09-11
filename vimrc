@@ -80,11 +80,7 @@ filetype plugin indent on
 " imap <C-i>f 464b1ebb-32c1-460c-8e9e-ffffffffffff
 
 " Javascript formatting
-let g:javascript_plugin_flow = 1
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
+let g:flow#enable = 0
 
 " Vim-flow
 let g:flow#autoclose = 1
@@ -127,8 +123,7 @@ let g:syntastic_javascript_eslint_exe='$(npm bin)/eslint'
 let g:elm_syntastic_show_warnings = 1
 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'jsx': ['eslint'],
+\   'javascript': ['eslint', 'flow'],
 \}
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
