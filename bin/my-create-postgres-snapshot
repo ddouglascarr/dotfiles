@@ -1,0 +1,23 @@
+#!/bin/bash
+set -eou pipefail
+
+################################################################################
+#
+# Creates a tar of the postgres directory.
+#
+# Usage:
+#
+#   $ my-create-postgres-snapshot ./my-backup.tar
+#
+################################################################################
+
+echo "--- Stopping Postgres"
+sudo systemctl stop postgresql
+
+echo "--- Creating snapshot"
+date
+sudo tar -Pcf "$@" /var/lib/postgresql/9.6/main
+date
+
+echo "--- Starting Postgres"
+sudo systemctl start postgresql

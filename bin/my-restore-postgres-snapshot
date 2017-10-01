@@ -1,0 +1,23 @@
+#!/bin/bash
+set -euo pipefail
+
+################################################################################
+#
+# Restores a tar of the postgres directory.
+#
+# Usage:
+#
+#   $ my-restore-postgres-snapshot ./my-packup.tar
+#
+################################################################################
+
+echo "--- Stopping Postgres"
+sudo systemctl stop postgresql
+
+echo "--- Creating Snapshot"
+date
+sudo tar -Pxf "$@"
+date
+
+echo "--- Starting Postgres"
+sudo systemctl start postgresql
