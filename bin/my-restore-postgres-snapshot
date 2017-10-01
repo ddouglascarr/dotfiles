@@ -14,7 +14,7 @@ set -euo pipefail
 echo "--- Stopping Postgres"
 sudo systemctl stop postgresql
 
-echo "--- Creating Snapshot"
+echo "--- Restoring Snapshot"
 date
 sudo tar -Pxf "$@"
 date
