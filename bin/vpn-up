@@ -1,7 +1,12 @@
 #!/bin/bash
 set -eou pipefail
 
-openvpn --config "/home/daniel/opt/openvpn/${@}.ovpn" \
+VPN_CONFIG_DIR="/home/daniel/opt/openvpn"
+vpn_region=${@:-US\ Midwest}
+
+cd ${VPN_CONFIG_DIR}
+
+openvpn --config "${VPN_CONFIG_DIR}/${vpn_region}.ovpn" \
   --script-security 2 \
   --dhcp-option "DNS 8.8.8.8" \
   --auth-user-pass /home/daniel/opt/openvpn/creds.conf \
