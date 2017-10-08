@@ -13,6 +13,7 @@ set -euo pipefail
 
 echo "--- Stopping Postgres"
 sudo systemctl stop postgresql
+sleep 5
 
 echo "--- Restoring Snapshot"
 date
