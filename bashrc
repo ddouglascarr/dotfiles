@@ -17,7 +17,7 @@ shopt -s histappend
 
 # sync history after every command
 # credit: https://unix.stackexchange.com/questions/131504/how-to-sync-terminal-session-command-history-in-bash
-export PROMPT_COMMAND="history -a; history -n"
+PROMPT_COMMAND="history -a; history -n"
 
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -89,7 +89,7 @@ if [ "$color_prompt" = yes ]; then
       ref=$(git symbolic-ref HEAD 2> /dev/null) || return
       PS_BRANCH="⎇  ${ref#refs/heads/} "
     }
-    export PROMPT_COMMAND="${PROMPT_COMMAND};parse_git_branch"
+    PROMPT_COMMAND="${PROMPT_COMMAND};parse_git_branch"
     PS_INFO="  $BLUE\w"
     PS_GIT="$YELLOW\$PS_BRANCH"
     PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"

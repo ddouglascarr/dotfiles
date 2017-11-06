@@ -144,3 +144,28 @@
       command: "git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install"
       tags:
         - fzf
+
+    - name: add-docker-key
+      become: yes
+      apt_key:
+        state: present
+        url: "https://download.docker.com/linux/ubuntu/gpg"
+      tags:
+        - docker
+
+    - name: add-docker-repo
+      become: yes
+      apt_repository:
+        state: present
+        repo: "deb amd64 https://download.docker.com/linux/ubuntu/ xenial stable"
+      tags:
+        - docker
+
+    - name: install docker
+      become: yes
+      action: apt pkg={{item}} state=installed update=true
+      with_items:
+        - docker
+        - docker-compose
+      tags:
+        - docker
