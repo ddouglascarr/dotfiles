@@ -152,7 +152,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-utils:/home/daniel/.local/bin:/home/daniel/src/dotfiles/bin
+export PATH=/usr/local/go/bin:$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-utils:/home/daniel/.local/bin:/home/daniel/src/dotfiles/bin
 export ANDROID_HOME=~/Android/Sdk
 export ANDROID_NDK=~/Android/Ndk
 
