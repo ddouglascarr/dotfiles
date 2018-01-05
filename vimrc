@@ -81,6 +81,7 @@ filetype plugin indent on
 
 " Javascript formatting
 let g:flow#enable = 0
+let g:prettier#exec_cmd_async = 1
 
 " Vim-flow
 let g:flow#autoclose = 1
