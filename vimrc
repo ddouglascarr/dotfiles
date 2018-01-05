@@ -29,7 +29,7 @@ map <Down> gj
 map <Up> gk
 
 " Tabs are 2 spaces
-set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " clang_complete
 let g:clang_library_path='/usr/lib/llvm-3.8/lib/libclang.so.1'
