@@ -1,0 +1,5 @@
+#!/bin/bash
+set -euo pipefail
+
+cat $@ | lpr -P LaserJet-4250 \
+  -o sides="two-sided-long-edge" 

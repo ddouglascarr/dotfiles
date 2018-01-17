@@ -41,7 +41,6 @@ let g:clang_snippets_engine = 'ultisnips'
 
 " line numbers
 set number
-set relativenumber
 " smart case search
 set ignorecase
 
