@@ -12,25 +12,31 @@ export PACKAGES="\
   ffmpeg \
   git \
   git-flow \
+  gparted \
   htop \
   jq \
   libr3-0 \
   libr3-dev \
+  lynx \
   maven \
+  mercurial \
+  nginx \
+  nmap \
   postgresql \
   powertop \
   pwgen \
+  python-dev \
+  python3-dev \
   redis-server \
   tmux \
   uuid-runtime \
   vim \
+  virtualbox \
   silversearcher-ag \
   software-properties-common \
   unrar \
   lynx \
   weechat \
-  python-dev \
-  python3-dev \
 "
 
 
