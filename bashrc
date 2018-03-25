@@ -170,6 +170,9 @@ export PYTHONDONTWRITEBYTECODE=1
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Python development stuff
+PYTHONDONTWRITEBYTECODE=True
+
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [ -f /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
