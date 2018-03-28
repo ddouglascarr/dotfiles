@@ -1,2 +1,3 @@
 *.retry
 vim/.netrwhist
+*.mypy_cache
