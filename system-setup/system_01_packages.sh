@@ -20,6 +20,7 @@ export PACKAGES="\
   lynx \
   maven \
   mercurial \
+  ncdu \
   nginx \
   nmap \
   postgresql \
