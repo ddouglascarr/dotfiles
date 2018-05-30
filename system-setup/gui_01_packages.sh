@@ -8,6 +8,14 @@ export PACKAGES="\
   youtube-dl \
 "
 
+export REMOVE_DEFAULT_PACKAGES="\
+  gnome-software \
+  gnome-maps \
+  gnome-calendar \
+  gnome-software \
+  thunderbird \
+  totem \
+"
 
 # Install all packages
 
@@ -16,4 +24,6 @@ echo ${PACKAGES}
 sudo apt-get update
 sudo apt-get install -y ${PACKAGES}
 
-
+echo "--- Uninstalling default packages"
+echo ${REMOVE_DEFAULT_PACKAGES}
+sudo apt-get remove -y ${REMOVE_DEFAULT_PACKAGES}
