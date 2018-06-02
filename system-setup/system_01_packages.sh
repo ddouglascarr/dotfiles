@@ -27,6 +27,7 @@ export PACKAGES="\
   powertop \
   pwgen \
   python-dev \
+  python-pip \
   python3-dev \
   redis-server \
   tmux \

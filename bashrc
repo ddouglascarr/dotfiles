@@ -160,10 +160,10 @@ export ANDROID_NDK=~/Android/Ndk
 ~/src/dotfiles/bin/setup-tmux
 source ~/src/dotfiles/bin/virtualenv.sh
 
-export NVM_DIR="/home/daniel/.nvm"
-export NODE_DEFAULT_VERSION=6.10
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-nvm use $NODE_DEFAULT_VERSION
+# export NVM_DIR="/home/daniel/.nvm"
+# export NODE_DEFAULT_VERSION=6.10
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# nvm use $NODE_DEFAULT_VERSION
 
 source virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
