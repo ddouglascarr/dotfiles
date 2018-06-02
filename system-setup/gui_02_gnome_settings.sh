@@ -14,3 +14,5 @@ dconf write /org/gnome/shell/enabled-extensions "[ \
   'launch-new-instance@gnome-shell-extensions.gcampax.github.com' \
 ]"
 
+dconf write /org/gnome/terminal/legacy/default-show-menubar "false"
+
