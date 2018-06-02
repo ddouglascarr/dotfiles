@@ -12,7 +12,9 @@ export REMOVE_DEFAULT_PACKAGES="\
   gnome-software \
   gnome-maps \
   gnome-calendar \
+  gnome-shell-extensions \
   gnome-software \
+  gnome-tweak-tool \
   thunderbird \
   totem \
 "
