@@ -94,25 +94,37 @@ let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
 " YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-let g:ycm_goto_buffer_command = 'vertical-split'
-nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'javascript': 1,
-      \}
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" let g:ycm_goto_buffer_command = 'vertical-split'
+" nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
+" let g:ycm_filetype_blacklist = {
+"       \ 'tagbar' : 1,
+"       \ 'qf' : 1,
+"       \ 'notes' : 1,
+"       \ 'markdown' : 1,
+"       \ 'unite' : 1,
+"       \ 'text' : 1,
+"       \ 'vimwiki' : 1,
+"       \ 'pandoc' : 1,
+"       \ 'infolog' : 1,
+"       \ 'mail' : 1,
+"       \ 'javascript': 1,
+"       \}
 
+" Elm
 let g:elm_syntastic_show_warnings = 1
 
+" Python
+au BufNewFile,BufRead *.py
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set expandtab |
+  \ set autoindent |
+  \ set fileformat=unix
+autocmd BufWritePre *.py 0,$!yapf
+
+" ALE
 let g:ale_linters = {
 \   'javascript': ['eslint', 'flow'],
 \}
