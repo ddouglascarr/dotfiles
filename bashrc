@@ -165,7 +165,6 @@ source ~/src/dotfiles/bin/virtualenv.sh
 # [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 # nvm use $NODE_DEFAULT_VERSION
 
-source virtualenvwrapper.sh
 export PYTHONDONTWRITEBYTECODE=1
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
