@@ -23,6 +23,7 @@ export PACKAGES="\
   ncdu \
   nginx \
   nmap \
+  openvpn \
   postgresql \
   powertop \
   pwgen \
