@@ -6,6 +6,7 @@ export PACKAGES="\
   apt-file \
   build-essential \
   ca-certificates \
+  cmake \
   curl \
   debian-archive-keyring \
   apt-transport-https \

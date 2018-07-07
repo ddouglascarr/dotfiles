@@ -1,3 +1,4 @@
 *.retry
 vim/.netrwhist
 *.mypy_cache
+vim/bundle/YouCompleteMe
