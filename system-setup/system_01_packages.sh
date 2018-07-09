@@ -13,6 +13,7 @@ export PACKAGES="\
   ffmpeg \
   git \
   git-flow \
+  gyp \
   gparted \
   htop \
   jq \
