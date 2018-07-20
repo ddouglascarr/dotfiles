@@ -12,10 +12,10 @@
 	url = https://github.com/Lokaltog/vim-powerline
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
-	url = git@github.com:flowtype/vim-flow.git
+	url = https://github.com/flowtype/vim-flow
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim
+	url = https://github.com:kien/ctrlp
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
