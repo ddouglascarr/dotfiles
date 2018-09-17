@@ -16,6 +16,7 @@ export PACKAGES="\
   gyp \
   gparted \
   htop \
+  iotop \
   jq \
   libr3-0 \
   libr3-dev \

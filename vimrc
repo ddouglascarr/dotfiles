@@ -96,6 +96,8 @@ set wildignore+=*/node_modules/*,*/build/*
 " YouCompleteMe
 " let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " let g:ycm_goto_buffer_command = 'vertical-split'
+let g:ycm_server_python_interpreter = '/home/daniel/.virtualenvs/edrolo36/bin/python'
+let g:ycm_python_binary_path='/home/daniel/.virtualenvs/edrolo36/bin/python'
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
 let g:ycm_filetype_blacklist = {
       \ 'tagbar' : 1,
@@ -122,7 +124,7 @@ au BufNewFile,BufRead *.py
   \ set expandtab |
   \ set autoindent |
   \ set fileformat=unix
-autocmd BufWritePre *.py 0,$!yapf
+" autocmd BufWritePre *.py 0,$!yapf
 
 " ALE
 let g:ale_linters = {
@@ -130,6 +132,13 @@ let g:ale_linters = {
 \}
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_fixers = {'python': ['yapf']}
+let g:ale_fix_on_save = 1
 
 " vim-rust
 let g:rustfmt_autosave = 1
+
+" vim-go
+let g:go_fmt_command = "goimports"
+
+set background=dark
