@@ -111,7 +111,12 @@ let g:ycm_filetype_blacklist = {
       \ 'infolog' : 1,
       \ 'mail' : 1,
       \ 'javascript': 1,
+      \ 'typescript': 1,
       \}
+
+" Typescript
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " Elm
 let g:elm_syntastic_show_warnings = 1
