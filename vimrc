@@ -112,6 +112,8 @@ let g:ycm_filetype_blacklist = {
       \ 'mail' : 1,
       \ 'javascript': 1,
       \ 'typescript': 1,
+      \ 'go': 1,
+      \ 'golang': 1,
       \}
 
 " Typescript
