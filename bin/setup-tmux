@@ -8,7 +8,7 @@ ROOSET_DIR=/src/rooset
 
 function send-workon-edrolo {
   window_num=$@
-  tmux send-keys -t edrolo:${window_num} "workon edrolo36" Enter
+  tmux send-keys -t edrolo:${window_num} "workon edrolo" Enter
 }
 
 tmux has-session -t edrolo &> /dev/null

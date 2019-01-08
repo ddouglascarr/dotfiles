@@ -15,9 +15,13 @@ sudo add-apt-repository \
 sudo apt update
 sudo apt install -y docker-ce
 
+# adding to the docker group allows user to execute docer without root
+sudo usermod -aG docker $USER
+
 echo "--- Installing docker-compose"
 sudo curl -L \
   https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` \
   -o /usr/local/bin/docker-compose
 
 sudo chmod 755 /usr/local/bin/docker-compose
+

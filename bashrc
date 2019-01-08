@@ -167,6 +167,7 @@ source ~/src/dotfiles/bin/virtualenv.sh
 
 export PYTHONDONTWRITEBYTECODE=1
 
+export WATSON_DIR="/home/daniel/src/my-work-log"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # tabtab source for serverless package
