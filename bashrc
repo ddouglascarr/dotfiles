@@ -166,6 +166,7 @@ source ~/src/dotfiles/bin/virtualenv.sh
 # nvm use $NODE_DEFAULT_VERSION
 
 export PYTHONDONTWRITEBYTECODE=1
+export EDITOR=vim
 
 export WATSON_DIR="/home/daniel/src/my-work-log"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

@@ -16,3 +16,4 @@ dconf write /org/gnome/shell/enabled-extensions "[ \
 
 dconf write /org/gnome/terminal/legacy/default-show-menubar "false"
 
+gsettings set org.gnome.desktop.interface enable-animations false

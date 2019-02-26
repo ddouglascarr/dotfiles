@@ -41,6 +41,7 @@ let g:clang_snippets_engine = 'ultisnips'
 
 " line numbers
 set number
+set relativenumber
 " smart case search
 set ignorecase
 
@@ -149,3 +150,4 @@ let g:rustfmt_autosave = 1
 let g:go_fmt_command = "goimports"
 
 set background=dark
+
