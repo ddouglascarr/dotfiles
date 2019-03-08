@@ -1,5 +1,5 @@
 #!/bin/bash
-set -o nounset -o pipefail
+set -o nounset 
 
 source ~/.bashrc
 HOME_DIR=/home/daniel
@@ -14,36 +14,31 @@ function send-workon-edrolo {
 tmux has-session -t edrolo &> /dev/null
 if [ $? != 0 ]
 then
-  tmux new-session -s edrolo -n scratch -d
+  tmux new-session -s edrolo -n 'vi-fend' -d
   send-workon-edrolo 0
+  tmux send-keys -t edrolo:0 "cd tod_django/react" Enter
 
-  tmux new-window -n manage -t edrolo:1 
-  send-workon-edrolo 1
+  tmux new-window -n 'vi-bend' -t edrolo:1 
+  send-workon-edrolo 'vi-bend'
 
-  tmux new-window -n webpack -t edrolo:2 
-  send-workon-edrolo 2
-  
+  tmux new-window -n 'manage' -t edrolo:2
+  send-workon-edrolo 'manage'
+
+  tmux split-window -h -t edrolo:2
+  send-workon-edrolo 'manage'
+
+  tmux split-window -v -t edrolo:2
+  send-workon-edrolo 'manage'
+  tmux send-keys -t edrolo:2 "cd tod_django/react" Enter
+
   tmux new-window -n "dev-1" -t edrolo:3
   send-workon-edrolo "dev-1"
   
   tmux new-window -n "dev-2" -t edrolo:4 
   send-workon-edrolo "dev-2"
   
-  tmux new-window -n "dev-3" -t edrolo:5
-  send-workon-edrolo "dev-3"
-  
-  tmux new-window -n "dev-4" -t edrolo:6 
-  send-workon-edrolo "dev-4"
-  
-  tmux new-window -n "dev-5" -t edrolo:7 
-  send-workon-edrolo "dev-5"
-fi
+  tmux new-window -n "docker" -t edrolo:5 
+  send-workon-edrolo "docker"
+  tmux send-keys -t edrolo:5 "cd ../../edrolo-tmp/infrastructure/local" Enter
 
-tmux has-session -t rooset &> /dev/null
-if [ $? != 0 ]
-then
-  tmux new-session -s rooset -n scratch -d
-  tmux new-window -n build -t rooset -c ${HOME_DIR}${ROOSET_DIR}/rooset-command-domain-posix/build -d
-  tmux split-window -h -t rooset:build -c ${HOME_DIR}${ROOSET_DIR} -d
-  tmux new-window -n dev -t rooset -c ${HOME_DIR}${ROOSET_DIR} -d
 fi
