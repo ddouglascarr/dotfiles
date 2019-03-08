@@ -42,3 +42,36 @@ then
   tmux send-keys -t edrolo:5 "cd ../../edrolo-tmp/infrastructure/local" Enter
 
 fi
+
+function send-workon-artproc {
+  window_num=$@
+  tmux send-keys -t artproc:${window_num} "workon artproc37" Enter
+}
+
+tmux has-session -t artproc &> /dev/null
+if [ $? != 0 ]
+then
+  tmux new-session -s artproc -n 'vi-fend' -d
+  send-workon-artproc 'vi-fend'
+  tmux send-keys -t artproc:vi-fend "cd ./frontend" Enter
+
+  tmux new-window -n 'vi-bend' -t artproc:1 
+  send-workon-artproc 'vi-bend' 
+  tmux send-keys -t artproc:vi-bend "cd ./bff" Enter
+
+  tmux new-window -n 'manage' -t artproc:2 
+  send-workon-artproc 'manage' 
+  tmux split-window -h -t artproc:manage
+  send-workon-artproc 'manage' 
+
+  tmux new-window -n 'dev-1' -t artproc:3
+  send-workon-artproc 'dev-1' 
+
+  tmux new-window -n 'dev-2' -t artproc:4 
+  send-workon-artproc 'dev-2' 
+  
+  tmux new-window -n 'docker' -t artproc:5
+  send-workon-artproc 'docker' 
+  tmux send-keys -t artproc:docker "cd ../mos-workflow" Enter
+fi
+
