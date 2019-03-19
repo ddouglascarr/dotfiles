@@ -75,3 +75,33 @@ then
   tmux send-keys -t artproc:docker "cd ../mos-workflow" Enter
 fi
 
+function send-init-rooset {
+  window_num=$@
+  tmux send-keys -t rooset:${window_num} "cd /home/daniel/go/src/github.com/ddouglascarr/rooset" Enter
+  tmux send-keys -t rooset:${window_num} ". etc/set-env" Enter
+}
+
+tmux has-session -t artproc &> /dev/null
+if [ $? != 0 ]
+then
+  tmux new-session -s rooset -n 'vi-fend' -d
+  send-init-rooset 'vi-fend'
+  tmux send-keys -t rooset:${window_num} "cd ./pages" Enter
+
+  tmux new-window -n 'vi-bend' -t rooset:1 
+  send-init-rooset 'vi-bend'
+
+  tmux new-window -n 'manage' -t rooset:2
+  send-init-rooset 'manage'
+  tmux split-window -h -t rooset:manage
+  send-init-rooset 'manage' 
+
+  tmux split-window -v -t rooset:manage
+  send-init-rooset 'manage' 
+
+  tmux new-window -n 'dev-1' -t rooset:3
+  send-init-rooset 'dev-1'
+
+  tmux new-window -n 'dev-2' -t rooset:4
+  send-init-rooset 'dev-2'
+fi
