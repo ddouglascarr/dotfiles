@@ -1,0 +1,13 @@
+#!/bin/bash
+
+################################################################################
+#
+# set-esp-env
+#
+#   source this to set env variables fpr esp32 development
+#   good idea to add it to the virtualenv postactivate
+#
+################################################################################
+
+export PATH="$HOME/esp/xtensa-esp32-elf/bin:$PATH"
+export IDF_PATH="/home/daniel/src/esp/esp-idf"
