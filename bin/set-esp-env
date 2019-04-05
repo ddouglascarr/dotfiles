@@ -9,5 +9,5 @@
 #
 ################################################################################
 
-export PATH="$HOME/esp/xtensa-esp32-elf/bin:$PATH"
-export IDF_PATH="/home/daniel/src/esp/esp-idf"
+export PATH="$HOME/src/esp/xtensa-esp32-elf/bin:$PATH"
+export IDF_PATH="$HOME/src/esp/esp-idf"
