@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ag -i -l --ignore-dir="node_modules" "$1" ./ | xargs -l vim -c "%s/$1/$2/gc" -c 'wq'

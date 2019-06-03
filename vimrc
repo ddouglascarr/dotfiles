@@ -45,6 +45,9 @@ set relativenumber
 " smart case search
 set ignorecase
 
+" dont count in octal
+set nrformats-=octal
+
 " omni func
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
