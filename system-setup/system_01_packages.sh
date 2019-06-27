@@ -27,6 +27,7 @@ export PACKAGES="\
   nginx \
   nmap \
   openvpn \
+  pdsh \
   postgresql \
   powertop \
   pwgen \
