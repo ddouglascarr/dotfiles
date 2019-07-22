@@ -97,29 +97,6 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
-" YouCompleteMe
-" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-" let g:ycm_goto_buffer_command = 'vertical-split'
-let g:ycm_server_python_interpreter = '/home/daniel/.virtualenvs/edrolo36/bin/python'
-let g:ycm_python_binary_path='/home/daniel/.virtualenvs/edrolo36/bin/python'
-nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar' : 1,
-      \ 'qf' : 1,
-      \ 'notes' : 1,
-      \ 'markdown' : 1,
-      \ 'unite' : 1,
-      \ 'text' : 1,
-      \ 'vimwiki' : 1,
-      \ 'pandoc' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'javascript': 1,
-      \ 'typescript': 1,
-      \ 'go': 1,
-      \ 'golang': 1,
-      \}
-
 " Typescript
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
@@ -136,6 +113,33 @@ au BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 " autocmd BufWritePre *.py 0,$!yapf
+
+py3 << EOF
+import os.path
+import sys
+
+if 'VIRTUAL_ENV' in os.environ:
+    base = os.environ['VIRTUAL_ENV']
+    site_packages = os.path.join(base, 'lib', 'python%s' %  sys.version[:3], 'site-packages')
+    prev_sys_path = list(sys.path)
+    import site
+    site.addsitedir(site_packages)
+    sys.real_prefix = sys.prefix
+    sys.prefix = base
+    
+    # Move the added items to the front of the path:
+    new_sys_path = []
+    for item in list(sys.path):
+         if item not in prev_sys_path:
+             new_sys_path.append(item)
+             sys.path.remove(item)
+    sys.path[:0] = new_sys_path
+
+EOF
+
+" Jedi (python)
+let g:python_host_prog = 'python'
+let g:python3_host_prog = 'python3'
 
 " ALE
 let g:ale_linters = {
