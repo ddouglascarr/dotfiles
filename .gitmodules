@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx
-[submodule "vim/bundle/YouCompleteMe"]
-	path = vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
 [submodule "vim/bundle/elm-vim"]
 	path = vim/bundle/elm-vim
 	url = https://github.com/ElmCast/elm-vim
