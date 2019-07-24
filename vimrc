@@ -1,4 +1,28 @@
 let mapleader = ' '
+
+py3 << EOF
+import os.path
+import sys
+
+if 'VIRTUAL_ENV' in os.environ:
+    base = os.environ['VIRTUAL_ENV']
+    site_packages = os.path.join(base, 'lib', 'python%s' %  sys.version[:3], 'site-packages')
+    prev_sys_path = list(sys.path)
+    import site
+    site.addsitedir(site_packages)
+    sys.real_prefix = sys.prefix
+    sys.prefix = base
+    
+    # Move the added items to the front of the path:
+    new_sys_path = []
+    for item in list(sys.path):
+         if item not in prev_sys_path:
+             new_sys_path.append(item)
+             sys.path.remove(item)
+    sys.path[:0] = new_sys_path
+
+EOF
+
 call pathogen#infect()
 
 " fzf
@@ -113,29 +137,6 @@ au BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 " autocmd BufWritePre *.py 0,$!yapf
-
-py3 << EOF
-import os.path
-import sys
-
-if 'VIRTUAL_ENV' in os.environ:
-    base = os.environ['VIRTUAL_ENV']
-    site_packages = os.path.join(base, 'lib', 'python%s' %  sys.version[:3], 'site-packages')
-    prev_sys_path = list(sys.path)
-    import site
-    site.addsitedir(site_packages)
-    sys.real_prefix = sys.prefix
-    sys.prefix = base
-    
-    # Move the added items to the front of the path:
-    new_sys_path = []
-    for item in list(sys.path):
-         if item not in prev_sys_path:
-             new_sys_path.append(item)
-             sys.path.remove(item)
-    sys.path[:0] = new_sys_path
-
-EOF
 
 " Jedi (python)
 let g:python_host_prog = 'python'

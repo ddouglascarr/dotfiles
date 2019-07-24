@@ -4,6 +4,7 @@ set -euo pipefail
 export PACKAGES="\
   apt-transport-https \
   apt-file \
+  bmake \
   build-essential \
   ca-certificates \
   cmake \
@@ -18,8 +19,12 @@ export PACKAGES="\
   htop \
   iotop \
   jq \
+  libbsd0 \
+  libbsd-dev \
   libr3-0 \
+  liblua5.3-dev \
   libr3-dev \
+  lua5.3 \
   lynx \
   maven \
   mercurial \
@@ -29,6 +34,7 @@ export PACKAGES="\
   openvpn \
   pdsh \
   postgresql \
+  postgresql-server-dev-10 \
   powertop \
   pwgen \
   python-dev \
