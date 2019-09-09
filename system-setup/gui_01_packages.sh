@@ -3,6 +3,7 @@ set -euo pipefail
 
 export PACKAGES="\
   alacarte \
+  gimp \
   gnome-shell-extensions \
   gnome-tweak-tool \
   hedgewars \

@@ -107,9 +107,9 @@ filetype plugin indent on
 " imap <C-i>f 464b1ebb-32c1-460c-8e9e-ffffffffffff
 
 " Javascript formatting
-let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+" let g:prettier#exec_cmd_async = 1
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
 
 
 " Vim-flow
@@ -124,6 +124,7 @@ set wildignore+=*/node_modules/*,*/build/*
 " Typescript
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+au FileType typescript nmap <silent> <leader>T :echo tsuquyomi#hint()<cr>
 
 " Elm
 let g:elm_syntastic_show_warnings = 1
@@ -159,3 +160,16 @@ let g:go_fmt_command = "goimports"
 
 set background=dark
 
+"Plugin: neosnippet
+"==================
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+let g:neosnippet#snippets_directory='~/.vim/snippets'
+let g:neosnippet#disable_runtime_snippets = { "_": 1, }
+
+"vim-go snippets seem to always take precedence over mine, which is Not OK.
+let g:go_disable_autoinstall = 1
+let g:go_loaded_gosnippets = 1
