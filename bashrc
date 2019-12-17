@@ -177,3 +177,7 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [ -f /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash ] && . /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash

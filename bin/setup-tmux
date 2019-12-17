@@ -57,7 +57,7 @@ then
 
   tmux new-window -n 'vi-bend' -t artproc:1 
   send-workon-artproc 'vi-bend' 
-  tmux send-keys -t artproc:vi-bend "cd ./bff" Enter
+  tmux send-keys -t artproc:vi-bend "cd ../admin-web-bff" Enter
 
   tmux new-window -n 'manage' -t artproc:2 
   send-workon-artproc 'manage' 

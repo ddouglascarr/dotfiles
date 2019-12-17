@@ -107,9 +107,9 @@ filetype plugin indent on
 " imap <C-i>f 464b1ebb-32c1-460c-8e9e-ffffffffffff
 
 " Javascript formatting
-" let g:prettier#exec_cmd_async = 1
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue Prettier
+let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.json,*.graphql,*.md,*.vue Prettier
 
 
 " Vim-flow
