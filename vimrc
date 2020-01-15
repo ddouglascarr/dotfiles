@@ -173,3 +173,9 @@ let g:neosnippet#disable_runtime_snippets = { "_": 1, }
 "vim-go snippets seem to always take precedence over mine, which is Not OK.
 let g:go_disable_autoinstall = 1
 let g:go_loaded_gosnippets = 1
+
+"protbuf
+"
+augroup filetype
+  au! BufRead,BufNewFile *.proto setfiletype proto
+augroup end

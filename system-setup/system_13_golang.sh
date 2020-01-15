@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-export GO_VERSION="1.12"
+export GO_VERSION="1.13"
 export GO_ARCH="amd64"
 export GO_OS="linux"
 export GO_INSTALL_DIR="/usr/local"
