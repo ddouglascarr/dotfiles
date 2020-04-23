@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euo pipefail
+
+################################################################################
+#
+# my-mv-to-plex
+#
+# rsync file or directory of media to plex server and delete local copy
+#
+# usage:
+#   $ my-mv-to-plex ["tv"|"movies"] [FILE|DIRECTORY]
+#
+# example:
+#  $ my-mv-to-plex tv "./rick.and.morty.season.933"
+#
+################################################################################
+
+rsync -a --chown pi:pirate --progress "${2}" "pi@raspberrypi.local:/var/lib/pirate-media/${1}/"
+rm -rf "${2}"
+
