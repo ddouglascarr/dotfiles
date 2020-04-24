@@ -15,6 +15,15 @@ set -euo pipefail
 #
 ################################################################################
 
-rsync -a --chown pi:pirate --progress "${2}" "pi@raspberrypi.local:/var/lib/pirate-media/${1}/"
-rm -rf "${2}"
+plex_library="${1}"
+shift
+
+for f in "${@}"
+do
+  echo "--- copying ${f}"
+  rsync -a --chown pi:pirate --progress "${f}" "pi@raspberrypi.local:/var/lib/pirate-media/${plex_library}/"
+  echo "--- removing local ${f}"
+  rm -rf "${2}"
+done
+
 
