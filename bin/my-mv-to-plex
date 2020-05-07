@@ -23,7 +23,7 @@ do
   echo "--- copying ${f}"
   rsync -a --chown pi:pirate --progress "${f}" "pi@raspberrypi.local:/var/lib/pirate-media/${plex_library}/"
   echo "--- removing local ${f}"
-  rm -rf "${2}"
+  rm -rf "${f}"
 done
 
 
