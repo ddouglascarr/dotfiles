@@ -90,7 +90,7 @@ if [ "$color_prompt" = yes ]; then
       PS_BRANCH="⎇  ${ref#refs/heads/} "
     }
     PROMPT_COMMAND="${PROMPT_COMMAND};parse_git_branch"
-    PS_INFO="  $BLUE\w"
+    PS_INFO="\h$:$BLUE\w"
     PS_GIT="$YELLOW\$PS_BRANCH"
     PS_TIME="\[\033[\$((COLUMNS-10))G\] $RED[\t]"
     PS1="${PS_INFO} ${PS_GIT}\n${RESET}${BLUE}\$${RESET} "
