@@ -17,6 +17,7 @@ export PACKAGES="\
   gyp \
   gparted \
   htop \
+  inotify-tools \
   iotop \
   jq \
   libbsd0 \
