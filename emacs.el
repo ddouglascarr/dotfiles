@@ -17,7 +17,7 @@
  '(ido-enable-flex-matching t)
  '(package-selected-packages
    (quote
-    (tide flycheck use-package yaml-mode neotree jedi evil helm))))
+    (company tide flycheck use-package yaml-mode neotree jedi evil helm))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -63,17 +63,22 @@
   (flycheck-mode +1)
   (setq flycheck-check-syntax-automatically '(save mode-enabled))
   (eldoc-mode +1)
-  (tide-hl-identifier-mode +1))
+  (tide-hl-identifier-mode +1)
   ;; company is an optional dependency. You have to
   ;; install it separately via package-install
   ;; `M-x package-install [ret] company`
-  ;; (company-mode +1))
+  (company-mode +1))
+
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
 
 ;; aligns annotation to the right hand side
 ;; (setq company-tooltip-align-annotations t)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
+;; tsx is typescript too
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
