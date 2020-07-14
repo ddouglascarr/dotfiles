@@ -15,9 +15,10 @@
     ("993b3eab4521684ca8813f8efd01fff3102102706b689a55b355160a2d2dcad6" default)))
  '(display-line-numbers-type (quote relative))
  '(ido-enable-flex-matching t)
+ '(lua-indent-level 2)
  '(package-selected-packages
    (quote
-    (company tide flycheck use-package yaml-mode neotree jedi evil helm))))
+    (lua-mode company tide flycheck use-package yaml-mode neotree jedi evil helm))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
