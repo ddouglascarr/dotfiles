@@ -10,15 +10,76 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+	 [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+	 ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
+ '(custom-enabled-themes (quote (wheatgrass)))
  '(custom-safe-themes
-   (quote
-    ("993b3eab4521684ca8813f8efd01fff3102102706b689a55b355160a2d2dcad6" default)))
+	 (quote
+		("993b3eab4521684ca8813f8efd01fff3102102706b689a55b355160a2d2dcad6" default)))
  '(display-line-numbers-type (quote relative))
+ '(flymake-error-bitmap
+	 (quote
+		(flymake-double-exclamation-mark ibm-theme-fringe-danger)))
+ '(flymake-note-bitmap (quote (exclamation-mark ibm-theme-fringe-info)))
+ '(flymake-warning-bitmap (quote (exclamation-mark ibm-theme-fringe-warning)))
+ '(hl-todo-keyword-faces
+	 (quote
+		(("HOLD" . "#9f1853")
+		 ("TODO" . "#007d79")
+		 ("NEXT" . "#009d9a")
+		 ("THEM" . "#005d5d")
+		 ("PROG" . "#0072c3")
+		 ("OKAY" . "#00539a")
+		 ("DONT" . "#0e6027")
+		 ("FAIL" . "#8a3ffc")
+		 ("DONE" . "#198038")
+		 ("NOTE" . "#ee5396")
+		 ("KLUDGE" . "#d12771")
+		 ("HACK" . "#d12771")
+		 ("TEMP" . "#491d8b")
+		 ("FIXME" . "#a56eff")
+		 ("XXX+" . "#6929c4")
+		 ("REVIEW" . "#1192e8")
+		 ("DEPRECATED" . "#003a6d"))))
+ '(ibuffer-deletion-face (quote dired-flagged))
+ '(ibuffer-filter-group-name-face (quote dired-mark))
+ '(ibuffer-marked-face (quote dired-marked))
+ '(ibuffer-title-face (quote dired-header))
  '(ido-enable-flex-matching t)
  '(lua-indent-level 2)
  '(package-selected-packages
-   (quote
-    (lua-mode company tide flycheck use-package yaml-mode neotree jedi evil helm))))
+	 (quote
+		(virtualenvwrapper dired-subtree lua-mode company tide flycheck use-package yaml-mode neotree jedi evil helm)))
+ '(tab-width 2)
+ '(vc-annotate-background nil)
+ '(vc-annotate-background-mode nil)
+ '(vc-annotate-color-map
+	 (quote
+		((20 . "#8a3ffc")
+		 (40 . "#007d79")
+		 (60 . "#005d5d")
+		 (80 . "#6929c4")
+		 (100 . "#d12771")
+		 (120 . "#9f1853")
+		 (140 . "#565151")
+		 (160 . "#525252")
+		 (180 . "#198038")
+		 (200 . "#0e6027")
+		 (220 . "#1192e8")
+		 (240 . "#00539a")
+		 (260 . "#0072c3")
+		 (280 . "#4d5358")
+		 (300 . "#0f62fe")
+		 (320 . "#0043ce")
+		 (340 . "#4589ff")
+		 (360 . "#009d9a"))))
+ '(vc-annotate-very-old-color nil)
+ '(xterm-color-names
+	 ["#21272a" "#8a3ffc" "#198038" "#d12771" "#0f62fe" "#007d79" "#0072c3" "#6f6f6f"])
+ '(xterm-color-names-bright
+	 ["#262626" "#6929c4" "#0e6027" "#9f1853" "#0043ce" "#005d5d" "#00539a" "#697077"]))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,12 +94,19 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
 (setq backup-directory-alist
 	`(("." . ,(concat user-emacs-directory "backups"))))
+(set-frame-font "IBM Plex Mono 8")
 
 ;; Ido
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
 
+;; dired-subtree from dired hacks
+(use-package dired-subtree
+  :config
+  (bind-keys :map dired-mode-map
+             ("]" . dired-subtree-insert)
+             ("[" . dired-subtree-remove)))
 ;; Keybindings
 (global-set-key (kbd "M-o") 'next-multiframe-window)
 

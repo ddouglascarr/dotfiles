@@ -1,0 +1,6 @@
+# ignore by default
+/*
+
+!.gitignore
+!init.el
+!/themes/
