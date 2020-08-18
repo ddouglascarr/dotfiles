@@ -57,6 +57,7 @@
  '(package-selected-packages
 	 (quote
 		(virtualenvwrapper dired-subtree lua-mode company tide flycheck use-package yaml-mode neotree jedi evil helm)))
+ '(safe-local-variable-values (quote ((eval prettier-mode t))))
  '(tab-width 2)
  '(vc-annotate-background nil)
  '(vc-annotate-background-mode nil)
@@ -97,38 +98,65 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/") 
-(setq backup-directory-alist
-	`(("." . ,(concat user-emacs-directory "backups"))))
 (set-frame-font "IBM Plex Mono 8")
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;; projectile
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 ;; Ido
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (ido-mode 1)
 
 ;; dired-subtree from dired hacks
-(use-package dired-subtree
-  :config
-  (bind-keys :map dired-mode-map
-             ("]" . dired-subtree-insert)
-             ("[" . dired-subtree-remove)))
+;; (use-package dired-subtree
+;;   :config
+;;   (bind-keys :map dired-mode-map
+;;              ("]" . dired-subtree-insert)
+;;              ("[" . dired-subtree-remove)))
+
+
 ;; Keybindings
 (global-set-key (kbd "M-o") 'next-multiframe-window)
 
-;; Package manager
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 ;; evil
 (require 'evil)
 (evil-mode 1)
 (global-display-line-numbers-mode)
 
+
 ;; flycheck
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
+(require 'flycheck)
+(global-flycheck-mode)
 (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
+
+;; javascript
+(require 'nvm)
+(nvm-use "12.14.1")
+(dir-locals-set-class-variables 'use-prettier-js
+                                '((js-mode . ((eval . (prettier-mode t))))))
+(dir-locals-set-directory-class "/home/daniel/src/edrolo/" 'use-prettier-js)
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+
+;; credit: 
+(defun my/use-eslint-from-node-modules ()
+  (let* ((root (locate-dominating-file
+                (or (buffer-file-name) default-directory)
+                "node_modules"))
+         (eslint
+          (and root
+               (expand-file-name "node_modules/.bin/eslint"
+                                 root))))
+    (when (and eslint (file-executable-p eslint))
+      (setq-local flycheck-javascript-eslint-executable eslint))))
+
+(add-hook 'flycheck-mode-hook #'my/use-eslint-from-node-modules)
 
 ;; typescript
 (defun setup-tide-mode ()
