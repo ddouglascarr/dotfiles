@@ -31,6 +31,7 @@
 
 
 ;; My dependencies
+(depends-on "evil")
 (depends-on "yaml-mode")
 (depends-on "web-mode")
 (depends-on "virtualenvwrapper")
@@ -39,10 +40,13 @@
 (depends-on "prettier")
 (depends-on "tide")
 (depends-on "python-environment")
-(depends-on "lua-mode")
+(depends-on "lua-mode" 
+    :git "https://github.com/immerrr/lua-mode.git"
+    :branch "master")
 (depends-on "jedi")
 (depends-on "dired-subtree")
 (depends-on "company")
 (depends-on "ag")
 (depends-on "projectile")
 (depends-on "py-yapf")
+(depends-on "ledger-mode")
