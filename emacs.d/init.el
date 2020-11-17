@@ -1,14 +1,7 @@
-(package-initialize)
-
+(setq package-enable-at-startup nil)
 ;; cask package management
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-;; (package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -192,6 +185,9 @@
 ;; (flycheck-add-mode 'typescript-eslint 'web-mode)
 
 ;; python
+(require 'py-yapf)
+(add-hook 'python-mode-hook 'py-yapf-enable-on-save)
+
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 

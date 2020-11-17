@@ -45,4 +45,4 @@
 (depends-on "company")
 (depends-on "ag")
 (depends-on "projectile")
-
+(depends-on "py-yapf")
