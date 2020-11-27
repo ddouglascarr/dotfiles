@@ -191,4 +191,11 @@
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
-
+;; lua-mode
+(add-hook 'lua-mode-hook
+  (lambda () 
+    (setq indent-tabs-mode nil)
+    (setq lua-indent-level 2)
+    (setq lua-indent-nested-block-content-align nil)
+    (setq lua-indent-close-paren-align nil)
+  ))
