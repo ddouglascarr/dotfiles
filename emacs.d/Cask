@@ -50,3 +50,8 @@
 (depends-on "projectile")
 (depends-on "py-yapf")
 (depends-on "ledger-mode")
+(depends-on "elixir-mode")
+(depends-on "lsp-mode")
+(depends-on "treemacs")
+(depends-on "treemacs-evil")
+(depends-on "treemacs-projectile")

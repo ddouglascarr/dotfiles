@@ -115,11 +115,17 @@
 ;; Keybindings
 (global-set-key (kbd "M-o") 'next-multiframe-window)
 
+;; Treemacs
+(require 'treemacs)
+(setq treemacs-filewatch-mode t)
+(add-hook 'treemacs-mode-hook (lambda() (display-line-numbers-mode -1)))
+
 
 ;; evil
 (require 'evil)
 (evil-mode 1)
 (global-display-line-numbers-mode)
+(define-key evil-normal-state-map (kbd "n") 'treemacs)
 
 
 ;; flycheck
@@ -199,3 +205,14 @@
     (setq lua-indent-nested-block-content-align nil)
     (setq lua-indent-close-paren-align nil)
   ))
+
+;; elixir
+(use-package lsp-mode
+  :commands lsp
+  :ensure t
+  :diminish lsp-mode
+  :hook
+  (elixir-mode . lsp)
+  :init
+  (add-to-list 'exec-path "~/src/elixir-ls/release/otp23"))
+
