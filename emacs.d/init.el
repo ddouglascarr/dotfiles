@@ -125,7 +125,8 @@
 (require 'evil)
 (evil-mode 1)
 (global-display-line-numbers-mode)
-(define-key evil-normal-state-map (kbd "n") 'treemacs)
+(evil-set-leader 'normal (kbd "SPC"))
+(evil-define-key 'normal 'global (kbd "<leader> n") 'treemacs)
 
 
 ;; flycheck
