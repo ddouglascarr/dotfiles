@@ -39,8 +39,8 @@ export PACKAGES="\
   powertop \
   pwgen \
   python-dev \
-  python-pip \
   python3-dev \
+  python3-venv \
   redis-server \
   tmux \
   uuid-runtime \
