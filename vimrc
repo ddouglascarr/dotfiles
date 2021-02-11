@@ -49,45 +49,44 @@ set ignorecase
 " dont count in octal
 set nrformats-=octal
 
-" vim-lsp
-nmap <C-]> :LspDefinition<return>
-
-" omni func
-" filetype plugin on
-" set omnifunc=syntaxcomplete#Complete
-
-" inoremap <expr> <C-Space> pumvisible() \|\| &omnifunc == '' ?
-"       \ "\<lt>C-n>" :
-"       \ "\<lt>C-x>\<lt>C-o><c-r>=pumvisible() ?" .
-"       \ "\"\\<lt>c-n>\\<lt>c-p>\\<lt>c-n>\" :" .
-"       \ "\" \\<lt>bs>\\<lt>C-n>\"\<CR>"
-" imap <C-@> <C-Space>
-
 " syntax
 syntax on
 set nocompatible
 filetype plugin indent on
-
-" Javascript formatting
-" let g:prettier#exec_cmd_async = 1
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.json,*.graphql,*.md,*.vue Prettier
-
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
+" vim-lsp
+nmap <C-]> :LspDefinition<return>
+let g:lsp_diagnostics_echo_cursor = 1
+
+" golang
+" handled by vim-lsp
+autocmd BufWritePre *.go LspDocumentFormatSync
+au BufNewFile,BufRead *.go
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4
+
+" Javascript formatting
+" let g:prettier#exec_cmd_async = 1
+" let g:prettier#autoformat = 0
+" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.json,*.graphql,*.md,*.vue Prettier
+
 " Python
-" au BufNewFile,BufRead *.py
-"   \ set tabstop=4 |
-"   \ set softtabstop=4 |
-"   \ set shiftwidth=4 |
-"   \ set expandtab |
-"   \ set autoindent |
-"   \ set fileformat=unix
-" autocmd BufWritePre *.py 0,$!yapf
+" handled by vim-lsp
+au BufNewFile,BufRead *.py
+  \ set tabstop=4 |
+  \ set softtabstop=4 |
+  \ set shiftwidth=4 |
+  \ set expandtab |
+  \ set autoindent |
+  \ set fileformat=unix
+" project specific
+autocmd BufWritePre /home/daniel/src/edrolo/*.py 0,$!yapf
 
 " ALE
 " let g:ale_linters = {
