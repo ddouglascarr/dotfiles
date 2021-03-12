@@ -86,7 +86,9 @@ au BufNewFile,BufRead *.py
   \ set autoindent |
   \ set fileformat=unix
 " project specific
+" yapf files, then return cursor after writing
 autocmd BufWritePre /home/daniel/src/edrolo/*.py 0,$!yapf
+autocmd BufWritePost /home/daniel/src/edrolo/*.py normal! `^
 
 " ALE
 " let g:ale_linters = {
