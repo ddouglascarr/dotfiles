@@ -71,10 +71,11 @@ au BufNewFile,BufRead *.go
   \ set softtabstop=4 |
   \ set shiftwidth=4
 
-" Javascript formatting
-" let g:prettier#exec_cmd_async = 1
-" let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.json,*.graphql,*.md,*.vue Prettier
+" Javascript
+let g:prettier#autoformat = 0
+if filereadable(findfile('.prettierrc', '.;'))
+  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.graphql,*.md,*.vue PrettierAsync
+endif
 
 " Python
 " handled by vim-lsp
@@ -87,8 +88,8 @@ au BufNewFile,BufRead *.py
   \ set fileformat=unix
 " project specific
 " yapf files, then return cursor after writing
-autocmd BufWritePre /home/daniel/src/edrolo/*.py 0,$!yapf
-autocmd BufWritePost /home/daniel/src/edrolo/*.py normal! `^
+" autocmd BufWritePre /home/daniel/src/edrolo/*.py 0,$!yapf
+" autocmd BufWritePost /home/daniel/src/edrolo/*.py normal! `^
 
 " ALE
 " let g:ale_linters = {
