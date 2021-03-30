@@ -62,6 +62,7 @@ set wildignore+=*/node_modules/*,*/build/*
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
 
 " golang
 " handled by vim-lsp
