@@ -35,7 +35,7 @@ export PACKAGES="\
   openvpn \
   pdsh \
   postgresql \
-  postgresql-server-dev-10 \
+  postgresql-server-dev-12 \
   powertop \
   pwgen \
   python-dev \

@@ -1,7 +1,9 @@
 #!/bin/bash
 set -euo pipefail
 
-pip install virtualenvwrapper
+sudo apt install python3-pip
+
+pip3 install virtualenvwrapper
 
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt-get update
