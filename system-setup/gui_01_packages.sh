@@ -34,9 +34,3 @@ echo "--- Uninstalling default packages"
 echo ${REMOVE_DEFAULT_PACKAGES}
 sudo apt-get remove -y ${REMOVE_DEFAULT_PACKAGES}
 
-echo "--- Installing flatpaks"
-flatpak install -y \
-  zotero \
-  spotify \
-  signal \
-  transmission
