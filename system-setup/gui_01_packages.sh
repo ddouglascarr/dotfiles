@@ -12,6 +12,7 @@ export PACKAGES="\
   meld \
   vlc \
   youtube-dl \
+  xclip \
 "
 
 export REMOVE_DEFAULT_PACKAGES="\

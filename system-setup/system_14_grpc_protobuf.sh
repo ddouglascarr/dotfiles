@@ -1,10 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-VERSION="3.5.1"
+VERSION="3.17.1"
 PLATFORM="linux-x86_64"
 DL_FILE="protoc-${VERSION}-${PLATFORM}.zip"
-DL_URL="https://github.com/google/protobuf/releases/download/v3.5.1/${DL_FILE}"
+DL_URL="https://github.com/google/protobuf/releases/download/v${VERSION}/${DL_FILE}"
 INSTALL_DIR="/usr/local"
 
 # Install libproto and protoc
