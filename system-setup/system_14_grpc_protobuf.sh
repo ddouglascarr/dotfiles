@@ -18,4 +18,4 @@ sudo chmod 755 ${INSTALL_DIR}/bin/protoc
 
 
 # Install golang proto support
-go get -u github.com/golang/protobuf/protoc-gen-go
+go get -u google.golang.org/protobuf
