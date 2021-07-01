@@ -181,3 +181,6 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [ -f /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash ] && . /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash
+
+# rust
+. "$HOME/.cargo/env"
