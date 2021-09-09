@@ -169,7 +169,6 @@ export PYTHONDONTWRITEBYTECODE=1
 export EDITOR=vim
 
 export WATSON_DIR="/home/daniel/src/my-work-log"
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
@@ -184,3 +183,5 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 
 # rust
 . "$HOME/.cargo/env"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
