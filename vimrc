@@ -59,6 +59,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
+" research (vimwiki, vim-zettel)
+let g:vimwiki_list = [{'path': '~/research/zkn/',
+  \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_markdown_link_ext = 1
+
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
 let g:lsp_diagnostics_echo_cursor = 1
