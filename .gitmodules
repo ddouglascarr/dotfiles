@@ -46,3 +46,6 @@
 [submodule "vim/bundle/fzf.vim"]
 	path = vim/bundle/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/zotcite"]
+	path = vim/bundle/zotcite
+	url = https://github.com/jalvesaq/zotcite

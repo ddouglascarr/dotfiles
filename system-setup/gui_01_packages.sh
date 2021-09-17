@@ -10,6 +10,8 @@ export PACKAGES="\
   gnome-tweak-tool \
   hedgewars \
   meld \
+  python3-pyqt5 \
+  python3-poppler-qt5 \
   vlc \
   youtube-dl \
   xclip \
