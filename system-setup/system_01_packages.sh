@@ -34,11 +34,14 @@ export PACKAGES="\
   nmap \
   openvpn \
   pdsh \
+  pandoc \
+  pandoc-citeproc \
   postgresql \
   postgresql-server-dev-12 \
   powertop \
   pwgen \
   python-dev \
+  python-is-python2 \
   python3-dev \
   python3-venv \
   redis-server \

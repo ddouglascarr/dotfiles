@@ -157,6 +157,7 @@ export ANDROID_HOME=~/Android/Sdk
 export ANDROID_NDK=~/Android/Ndk
 
 # Runtime setup
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 ~/src/dotfiles/bin/setup-tmux
 source ~/src/dotfiles/bin/virtualenv.sh
 
