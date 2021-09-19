@@ -70,10 +70,6 @@ let g:vimwiki_markdown_link_ext = 1
 autocmd FileType vimwiki setlocal formatoptions+=aw
 autocmd FileType markdown setlocal formatoptions+=aw
 
-" zotcite in vimwiki files
-let zotcite_filetypes = ['markdown', 'pandoc', 'vimwiki']
-autocmd FileType vimwiki source ~/.vim/bundle/zotcite/after/syntax/markdown.vim
-
 
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
