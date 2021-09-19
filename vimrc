@@ -45,6 +45,8 @@ set number
 set relativenumber
 " smart case search
 set ignorecase
+" show cursor positon
+set ruler
 
 " dont count in octal
 set nrformats-=octal
@@ -60,9 +62,14 @@ let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
 " research (vimwiki, vim-zettel)
+let g:vimwiki_global_ext = 0  " dont make all md vimwiki
 let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
+" autowrap text in markdown (incl vimwiki markdown)
+autocmd FileType vimwiki setlocal formatoptions+=aw
+autocmd FileType markdown setlocal formatoptions+=aw
+
 
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
@@ -80,7 +87,7 @@ au BufNewFile,BufRead *.go
 " Javascript
 let g:prettier#autoformat = 0
 if filereadable(findfile('.prettierrc', '.;'))
-  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.graphql,*.md,*.vue PrettierAsync
+  autocmd BufWritePre *.js,*.jsx,*mjs,*.ts,*.tsx,*.graphql,*.vue PrettierAsync
 endif
 
 " Python
