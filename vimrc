@@ -67,8 +67,9 @@ let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
 " autowrap text in markdown (incl vimwiki markdown)
-autocmd FileType vimwiki setlocal formatoptions+=aw
-autocmd FileType markdown setlocal formatoptions+=aw
+" autocmd FileType vimwiki setlocal formatoptions+=aw
+" autocmd FileType markdown setlocal formatoptions+=aw
+let g:pandoc#modules#disabled = ["folding"]
 
 
 " vim-lsp
