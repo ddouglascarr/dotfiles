@@ -25,6 +25,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $laptop-display eDP-1
 output DP-8 scale 2
 output DP-9 scale 2
+output DP-5 scale 2
 output $laptop-display scale 2
 
 bindswitch --reload --locked lid:on output $laptop-display disable
@@ -66,7 +67,7 @@ bindswitch --reload --locked lid:off output $laptop-display enable
 # Read `man 5 sway-input` for more information about this section.
 
 input "type:keyboard" {
-  xkb_options caps:escape,altwin:prtsc_rwin
+  xkb_options caps:escape,altwin:prtsc_rwin,altwin:menu_win
 }
 
 input 2:10:TPPS/2_Elan_TrackPoint {

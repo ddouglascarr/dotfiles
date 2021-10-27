@@ -157,9 +157,11 @@ export ANDROID_HOME=~/Android/Sdk
 export ANDROID_NDK=~/Android/Ndk
 
 # Runtime setup
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-~/src/dotfiles/bin/setup-tmux
-source ~/src/dotfiles/bin/virtualenv.sh
+if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+  ~/src/dotfiles/bin/setup-tmux
+  source ~/src/dotfiles/bin/virtualenv.sh
+fi
 
 # export NVM_DIR="/home/daniel/.nvm"
 # export NODE_DEFAULT_VERSION=6.10
