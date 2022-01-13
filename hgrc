@@ -13,3 +13,5 @@ reset = revert --no-backup
 #
 # pager =
 # color =
+rebase =
+transplant =
