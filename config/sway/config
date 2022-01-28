@@ -23,6 +23,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 
 set $laptop-display eDP-1
+output DP-7 scale 2
 output DP-8 scale 2
 output DP-9 scale 2
 output DP-5 scale 2
@@ -87,7 +88,7 @@ input 2:10:TPPS/2_Elan_TrackPoint {
     # Start your launcher
     bindsym $mod+d exec $menu
 
-    bindsym mod4+m exec swaylock -c 000000 -f --clock
+    bindsym mod4+m exec swaylock -c 000000 -f --clock --grace 250
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
