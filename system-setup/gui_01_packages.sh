@@ -4,16 +4,14 @@ set -euo pipefail
 export PACKAGES="\
   alacarte \
   flatpak \
+  fonts-ibm-plex \
   gimp \
   gnome-shell-extensions \
   gnome-shell-extension-autohidetopbar \
   gnome-tweak-tool \
-  hedgewars \
   meld \
   python3-pyqt5 \
   python3-poppler-qt5 \
-  vlc \
-  youtube-dl \
   xclip \
 "
 

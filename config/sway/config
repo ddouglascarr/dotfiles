@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term x-terminal-emulator
+set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -23,8 +23,10 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 
 set $laptop-display eDP-1
+output DP-7 scale 2
 output DP-8 scale 2
 output DP-9 scale 2
+output DP-5 scale 2
 output $laptop-display scale 2
 
 bindswitch --reload --locked lid:on output $laptop-display disable
@@ -41,11 +43,11 @@ bindswitch --reload --locked lid:off output $laptop-display enable
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' \
-#               resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 --clock' \
+         timeout 600 'swaymsg "output * dpms off"' \
+              resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000 --clock'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -66,7 +68,7 @@ bindswitch --reload --locked lid:off output $laptop-display enable
 # Read `man 5 sway-input` for more information about this section.
 
 input "type:keyboard" {
-  xkb_options caps:escape,altwin:prtsc_rwin
+  xkb_options caps:escape,altwin:prtsc_rwin,altwin:menu_win
 }
 
 input 2:10:TPPS/2_Elan_TrackPoint {
@@ -85,6 +87,8 @@ input 2:10:TPPS/2_Elan_TrackPoint {
 
     # Start your launcher
     bindsym $mod+d exec $menu
+
+    bindsym mod4+m exec swaylock -c 000000 -f --clock --grace 250
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.

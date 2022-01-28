@@ -4,6 +4,7 @@ set -euo pipefail
 export PACKAGES="\
   apt-transport-https \
   apt-file \
+  bibtool \
   bmake \
   build-essential \
   ca-certificates \

@@ -18,7 +18,7 @@ let NERDTreeShowHidden=1
 set mouse=a
 
 " Clipboard
-vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+vmap <C-c> y:call system("wl-copy", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <S-Insert> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 " Splits
@@ -67,12 +67,8 @@ let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
 " autowrap text in markdown (incl vimwiki markdown)
-autocmd FileType vimwiki setlocal formatoptions+=aw
-autocmd FileType markdown setlocal formatoptions+=aw
-
-" zotcite in vimwiki files
-let zotcite_filetypes = ['markdown', 'pandoc', 'vimwiki']
-autocmd FileType vimwiki source ~/.vim/bundle/zotcite/after/syntax/markdown.vim
+autocmd FileType vimwiki setlocal formatoptions+=a
+autocmd FileType markdown setlocal formatoptions+=a
 
 
 " vim-lsp

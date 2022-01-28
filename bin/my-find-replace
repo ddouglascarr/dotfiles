@@ -6,7 +6,7 @@ path=$2
 replace_exp=$3
 
 # ag -l "${search_exp}" "${path}" | xargs -l vim -c "${replace_exp}" -c 'wq'
-for file in $(ag -l ${search_exp}); do
+for file in $(ag -l ${search_exp} ${path}); do
   vim -c "${replace_exp}" "${file}"
 done
 
