@@ -69,8 +69,6 @@ let g:vimwiki_markdown_link_ext = 1
 " autowrap text in markdown (incl vimwiki markdown)
 autocmd FileType vimwiki setlocal formatoptions+=a
 autocmd FileType markdown setlocal formatoptions+=a
-let g:pandoc#modules#disabled = ["folding"]
-let g:pandoc#syntax#conceal#use = 0
 
 
 " vim-lsp
