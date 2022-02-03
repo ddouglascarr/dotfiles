@@ -62,6 +62,7 @@ let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/node_modules/*,*/build/*
 
 " research (vimwiki, vim-zettel)
+autocmd FileType vimwiki nnoremap <leader>zn :ZettelNew<CR>
 let g:vimwiki_global_ext = 0  " dont make all md vimwiki
 let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
