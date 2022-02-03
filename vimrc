@@ -66,9 +66,8 @@ let g:vimwiki_global_ext = 0  " dont make all md vimwiki
 let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
-" autowrap text in markdown (incl vimwiki markdown)
-" autocmd FileType vimwiki setlocal formatoptions+=a
-" autocmd FileType markdown setlocal formatoptions+=a
+autocmd FileType markdown setlocal formatoptions=tacqw
+autocmd FileType vimwiki setlocal formatoptions=tacqw
 
 " bibtex-fzf  copy-pasted from readme: https://github.com/msprev/fzf-bibtex
 function! s:bibtex_markdown_sink(lines)
