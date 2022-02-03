@@ -13,6 +13,7 @@ export PACKAGES="\
   python3-pyqt5 \
   python3-poppler-qt5 \
   xclip \
+  xdg-desktop-portal-wlr \
 "
 
 export REMOVE_DEFAULT_PACKAGES="\
