@@ -192,3 +192,9 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 
 # nix
 if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# research
+export FZF_BIBTEX_SOURCES="/home/daniel/research/bibliography.bib"
+export FZF_BIBTEX_CACHEDIR="/home/daniel/research/.fzf-bibliography-cache"
+
+

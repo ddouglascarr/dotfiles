@@ -67,9 +67,35 @@ let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
 " autowrap text in markdown (incl vimwiki markdown)
-autocmd FileType vimwiki setlocal formatoptions+=a
-autocmd FileType markdown setlocal formatoptions+=a
+" autocmd FileType vimwiki setlocal formatoptions+=a
+" autocmd FileType markdown setlocal formatoptions+=a
 
+" bibtex-fzf  copy-pasted from readme: https://github.com/msprev/fzf-bibtex
+function! s:bibtex_markdown_sink(lines)
+    let r=system("bibtex-markdown ", a:lines)
+    execute ':normal! a' . r
+endfunction
+
+function! s:bibtex_cite_sink_insert(lines)
+    let r=system("bibtex-cite ", a:lines)
+    execute ':normal! a' . r
+    call feedkeys('a', 'n')
+endfunction
+
+" <leader>c for inserting biliography item
+nnoremap <silent> <leader>c :call fzf#run({
+  \ 'source': 'bibtex-ls',
+  \ 'sink*': function('<sid>bibtex_markdown_sink'),
+  \ 'up': '40%',
+  \ 'options': '--ansi --layout=reverse-list --multi --prompt "Markdown> "'})<CR>
+
+" @@ in insert mode will search the bibliography, and insert a reference like
+" @bollmerKnowledgeWeHave2018
+inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
+  \ 'source': 'bibtex-ls',
+  \ 'sink*': function('<sid>bibtex_cite_sink_insert'),
+  \ 'up': '40%',
+  \ 'options': '--ansi --layout=reverse-list --multi --prompt "Cite> "'})<CR>
 
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
