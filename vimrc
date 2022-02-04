@@ -13,6 +13,7 @@ set directory=/tmp,.
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
+map <leader>h :History<CR>
 
 " Mouse mode
 set mouse=a
@@ -63,10 +64,12 @@ set wildignore+=*/node_modules/*,*/build/*
 
 " research (vimwiki, vim-zettel)
 autocmd FileType vimwiki nnoremap <leader>zn :ZettelNew<CR>
+autocmd FileType vimwiki nnoremap <leader>zi :ZettelInbox<CR>
 let g:vimwiki_global_ext = 0  " dont make all md vimwiki
 let g:vimwiki_list = [{'path': '~/research/zkn/',
   \ 'syntax': 'markdown', 'ext': '.md'}]
 let g:vimwiki_markdown_link_ext = 1
+let g:vimwiki_conceal_onechar_markers = 0
 autocmd FileType markdown setlocal formatoptions=tacqw
 autocmd FileType vimwiki setlocal formatoptions=tacqw
 
