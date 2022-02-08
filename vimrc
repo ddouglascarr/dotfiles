@@ -2,21 +2,31 @@ let mapleader = ' '
 
 call pathogen#infect()
 
-" fzf
-set rtp+=~/.fzf
 
-" Put swp files in /tmp
+" vim builtin settings
+syntax on
+set nocompatible
+filetype plugin indent on
 set backupdir=/tmp
 set directory=/tmp,.
+set path+=**
+set wildmenu
+set wildignore+=*/node_modules/*,*/build/*
+set number
+set relativenumber
+set ignorecase
+set ruler
+set nrformats-=octal  " dont count in octal
+set mouse=a
 
+" fzf
+set rtp+=~/.fzf  " fzf
 
+" NERDTree
 map <leader>n :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 let NERDTreeShowHidden=1
 map <leader>h :History<CR>
-
-" Mouse mode
-set mouse=a
 
 " Clipboard
 vmap <C-c> y:call system("wl-copy", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
@@ -41,26 +51,10 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 " let g:clang_snippets = 1
 " let g:clang_snippets_engine = 'ultisnips'
 
-" line numbers
-set number
-set relativenumber
-" smart case search
-set ignorecase
-" show cursor positon
-set ruler
-
-" dont count in octal
-set nrformats-=octal
-
-" syntax
-syntax on
-set nocompatible
-filetype plugin indent on
 
 " CtrlP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
-set wildignore+=*/node_modules/*,*/build/*
 
 " research (vimwiki, vim-zettel)
 autocmd FileType vimwiki nnoremap <leader>zn :ZettelNew<CR>
