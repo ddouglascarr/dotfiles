@@ -11,7 +11,7 @@ export PACKAGES="\
   cmake \
   curl \
   debian-archive-keyring \
-  apt-transport-https \
+  exuberant-ctags \
   ffmpeg \
   git \
   git-flow \
@@ -35,8 +35,6 @@ export PACKAGES="\
   nmap \
   openvpn \
   pdsh \
-  pandoc \
-  pandoc-citeproc \
   postgresql \
   postgresql-server-dev-12 \
   powertop \
