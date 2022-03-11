@@ -100,6 +100,9 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
 nmap <C-]> :LspDefinition<return>
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_log_verbose = 1
+let g:lsp_log_file = expand('/tmp/vim-lsp.log')
+" let g:asyncomplete_log_file = expand('/tmp/vim-lsp-asyncomplete.log')
 
 " golang
 " handled by vim-lsp

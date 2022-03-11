@@ -15,3 +15,5 @@ reset = revert --no-backup
 # color =
 rebase =
 transplant =
+purge =
+strip =

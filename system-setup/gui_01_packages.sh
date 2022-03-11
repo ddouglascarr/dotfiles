@@ -9,9 +9,11 @@ export PACKAGES="\
   gnome-shell-extensions \
   gnome-shell-extension-autohidetopbar \
   gnome-tweak-tool \
+  imagemagick \
   meld \
   python3-pyqt5 \
   python3-poppler-qt5 \
+  sane-utils \
   xclip \
   xdg-desktop-portal-wlr \
 "
