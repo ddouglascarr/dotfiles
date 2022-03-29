@@ -109,6 +109,8 @@ let g:lsp_settings_filetype_javascript = ['typescript-language-server']
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('/tmp/vim-lsp.log')
 " let g:asyncomplete_log_file = expand('/tmp/vim-lsp-asyncomplete.log')
+" code actions showing up all over the place
+let g:lsp_document_code_action_signs_enabled = 0
 
 " golang
 " handled by vim-lsp
