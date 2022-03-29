@@ -187,6 +187,11 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 
 # nix
 if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+if [ -e /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+  . /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh
+fi  # home manager
+
+
 
 # research
 export FZF_BIBTEX_SOURCES="/home/daniel/research/bibliography.bib"

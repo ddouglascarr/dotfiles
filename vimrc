@@ -56,6 +56,12 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=2 smarttab
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'a'
 
+" Ale
+let g:ale_fixers = {
+  \ 'javascript': ['eslint'],
+  \ 'jsx': ['eslint']
+  \ }
+
 " research (vimwiki, vim-zettel)
 autocmd FileType vimwiki nnoremap <leader>zn :ZettelNew<CR>
 autocmd FileType vimwiki nnoremap <leader>zi :ZettelInbox<CR>
@@ -99,7 +105,7 @@ inoremap <silent> @@ <c-g>u<c-o>:call fzf#run({
 " vim-lsp
 nmap <C-]> :LspDefinition<return>
 let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_settings_filetype_javascript = ['typescript-language-server', 'eslint-language-server']
+let g:lsp_settings_filetype_javascript = ['typescript-language-server']
 let g:lsp_log_verbose = 1
 let g:lsp_log_file = expand('/tmp/vim-lsp.log')
 " let g:asyncomplete_log_file = expand('/tmp/vim-lsp-asyncomplete.log')
@@ -131,15 +137,6 @@ au BufNewFile,BufRead *.py
 " yapf files, then return cursor after writing
 autocmd BufWritePre /home/daniel/src/edrolo/*.py 0,$!yapf
 autocmd BufWritePost /home/daniel/src/edrolo/*.py normal! `^
-
-" ALE
-" let g:ale_linters = {
-" \   'javascript': ['eslint', 'flow'],
-" \}
-" let g:ale_lint_on_save = 1
-" let g:ale_lint_on_text_changed = 0
-" let g:ale_fixers = {'python': ['yapf']}
-" let g:ale_fix_on_save = 1
 
 set background=dark
 
