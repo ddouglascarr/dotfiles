@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+export CLICOLOR=1
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -125,7 +126,7 @@ fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -139,57 +140,42 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-  fi
-fi
+# if ! shopt -oq posix; then
+#   if [ -f /usr/share/bash-completion/bash_completion ]; then
+#     . /usr/share/bash-completion/bash_completion
+#   elif [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+#   fi
+# fi
 
 export PATH=/usr/local/go/bin:$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-utils:/home/daniel/.local/bin:/home/daniel/src/dotfiles/bin:/home/daniel/go/bin:/home/daniel/.cargo/bin:/home/daniel/.cask/bin
-export ANDROID_HOME=~/Android/Sdk
-export ANDROID_NDK=~/Android/Ndk
 
 # Runtime setup
-if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
-  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-  ~/src/dotfiles/bin/setup-tmux
-  source ~/src/dotfiles/bin/virtualenv.sh
-fi
+# if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
+  # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+  # ~/src/dotfiles/bin/setup-tmux
+  # source ~/src/dotfiles/bin/virtualenv.sh
+# fi
 
-# export NVM_DIR="/home/daniel/.nvm"
-# export NODE_DEFAULT_VERSION=6.10
-# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-# nvm use $NODE_DEFAULT_VERSION
+export NVM_DIR="/Users/daniel/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR=vim
 
 export WATSON_DIR="/home/daniel/src/my-work-log"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /home/daniel/.nvm/versions/node/v6.10.2/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
-
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[ -f /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash ] && . /home/daniel/src/edrolo/lambdas/node_modules/tabtab/.completions/slss.bash
-
 # rust
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
 # nix
-if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-if [ -e /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
-  . /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh
-fi  # home manager
+# if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# if [ -e /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+#   . /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh
+# fi  # home manager
 
 
 
