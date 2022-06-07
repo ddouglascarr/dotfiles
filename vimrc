@@ -19,6 +19,9 @@ set ruler
 set nrformats-=octal  " dont count in octal
 set mouse=a
 
+" macos
+set clipboard=unnamed
+
 " fzf
 set rtp+=~/.fzf  " fzf
 
