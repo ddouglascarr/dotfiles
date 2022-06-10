@@ -6,6 +6,7 @@ export PACKAGES="\
   ffmpeg \
   htop \
   jq \
+  mercurial \
   postgresql@13 \
   tmux \
   the_silver_searcher \

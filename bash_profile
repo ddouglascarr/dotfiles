@@ -102,7 +102,7 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+xterm*|rxvt*|tmux*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
@@ -183,4 +183,9 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 export FZF_BIBTEX_SOURCES="/home/daniel/research/bibliography.bib"
 export FZF_BIBTEX_CACHEDIR="/home/daniel/research/.fzf-bibliography-cache"
 
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
 
