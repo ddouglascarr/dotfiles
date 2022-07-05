@@ -9,6 +9,8 @@ case $- in
       *) return;;
 esac
 
+HOME_DIR="/Users/daniel"
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -148,7 +150,7 @@ fi
 #   fi
 # fi
 
-export PATH=/usr/local/go/bin:$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/Android/Sdk/platform-tools:/home/daniel/src/my-utils:/home/daniel/.local/bin:/home/daniel/src/dotfiles/bin:/home/daniel/go/bin:/home/daniel/.cargo/bin:/home/daniel/.cask/bin
+export PATH=/usr/local/go/bin:$PATH:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin
 
 # Runtime setup
 # if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
@@ -157,13 +159,13 @@ export PATH=/usr/local/go/bin:$PATH:/home/daniel/Android/Sdk/tools:/home/daniel/
   # source ~/src/dotfiles/bin/virtualenv.sh
 # fi
 
-export NVM_DIR="/Users/daniel/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="${HOME_DIR}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use default  # This loads nvm
 
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR=vim
 
-export WATSON_DIR="/home/daniel/src/my-work-log"
+export WATSON_DIR="${HOME_DIR}/src/my-work-log"
 
 # rust
 # . "$HOME/.cargo/env"
@@ -172,21 +174,27 @@ export WATSON_DIR="/home/daniel/src/my-work-log"
 
 
 # nix
-# if [ -e /home/daniel/.nix-profile/etc/profile.d/nix.sh ]; then . /home/daniel/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-# if [ -e /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
-#   . /home/daniel/.nix-profile/etc/profile.d/hm-session-vars.sh
+# if [ -e ${HOME_DIR}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME_DIR}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+# if [ -e ${HOME_DIR}/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
+#   . ${HOME_DIR}/.nix-profile/etc/profile.d/hm-session-vars.sh
 # fi  # home manager
 
 
 
 # research
-export FZF_BIBTEX_SOURCES="/home/daniel/research/bibliography.bib"
-export FZF_BIBTEX_CACHEDIR="/home/daniel/research/.fzf-bibliography-cache"
+export FZF_BIBTEX_SOURCES="${HOME_DIR}/research/bibliography.bib"
+export FZF_BIBTEX_CACHEDIR="${HOME_DIR}/research/.fzf-bibliography-cache"
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 # End Nix
+
+
+# git completion
+if [ -f ~/src/dotfiles/bin/macos-git-completion.bash ]; then
+  . ~/src/dotfiles/bin/macos-git-completion.bash
+fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -33,4 +33,5 @@ while [ "$finished_date" -ne `date +%s` ]; do
   sleep 1
 done
 
-notify-send --expire-time=120000 --urgency=critical 'Timer finished' "$msg"
+osascript -e 'display notification "${msg}"'
+# notify-send --expire-time=120000 --urgency=critical 'Timer finished' "$msg"

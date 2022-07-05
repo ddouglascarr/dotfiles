@@ -12,6 +12,7 @@ export PACKAGES="\
   the_silver_searcher \
   rar \
   weechat \
+  wget \
 "
 
 
