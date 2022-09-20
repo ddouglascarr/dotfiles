@@ -197,4 +197,10 @@ if [ -f ~/src/dotfiles/bin/macos-git-completion.bash ]; then
   . ~/src/dotfiles/bin/macos-git-completion.bash
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $(uname -m) == 'arm64' ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+if [[ $(uname -m) == 'x86_64' ]]; then
+  eval "$(/usr/local/Homebrew/bin/brew shellenv)"
+fi
