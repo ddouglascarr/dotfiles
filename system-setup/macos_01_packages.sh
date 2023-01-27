@@ -2,6 +2,7 @@
 set -euo pipefail
 
 export PACKAGES="\
+  bash \
   bib-tool \
   ffmpeg \
   htop \
@@ -11,6 +12,7 @@ export PACKAGES="\
   tmux \
   the_silver_searcher \
   rar \
+  virtualbox \
   weechat \
   wget \
 "
