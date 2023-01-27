@@ -2,3 +2,5 @@
 vim/.netrwhist
 *.mypy_cache
 vim/bundle/YouCompleteMe
+config/weechat
+config/yarn
