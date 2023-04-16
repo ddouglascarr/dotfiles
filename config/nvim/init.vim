@@ -24,5 +24,6 @@ if exists('g:vscode')
 else
     " ordinary Neovim
     lua require('packages')
+    lua require('lsp')
     lua require('typescript')
 endif

@@ -1,6 +1,27 @@
-local use = require('packer').use
-require('packer').startup(function()
-  use 'wbthomason/packer.nvim'
-  use 'neovim/neovim-lspconfig'
-end)
+local vim = vim
+local execute = vim.api.nvim_command
+local fn = vim.fn
+-- ensure that packer is installed
+local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+    execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+    execute 'packadd packer.nvim'
+end
 
+vim.cmd('packadd packer.nvim')
+local packer = require'packer'
+local util = require'packer.util'
+packer.init({
+  package_root = util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
+})
+
+packer.startup(function()
+  local use = use
+
+  use 'neovim/nvim-lspconfig'
+
+  use 'nvim-treesitter/nvim-treesitter'
+  use 'sheerun/vim-polyglot'
+  use {'prettier/vim-prettier', run = 'yarn install' }
+  end
+)

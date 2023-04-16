@@ -1,1 +1,1 @@
-console.log('foo')
+require'lspconfig'.tsserver.setup{}
