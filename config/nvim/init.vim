@@ -23,5 +23,6 @@ if exists('g:vscode')
     -- VSCode extension specific settings.
 else
     " ordinary Neovim
+    lua require('packages')
     lua require('typescript')
 endif
