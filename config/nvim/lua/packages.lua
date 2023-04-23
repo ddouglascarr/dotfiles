@@ -23,5 +23,8 @@ packer.startup(function()
   use 'nvim-treesitter/nvim-treesitter'
   use 'sheerun/vim-polyglot'
   use {'prettier/vim-prettier', run = 'yarn install' }
+  use { 'junegunn/fzf' }
+  use 'junegunn/fzf.vim'
+
   end
 )

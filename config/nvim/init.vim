@@ -1,3 +1,4 @@
+let mapleader = " "
 
 " vim builtin settings
 syntax on
@@ -14,7 +15,7 @@ set ignorecase
 set ruler
 set nrformats-=octal  " dont count in octal
 set mouse=a
-let mapleader = " "
+set rtp+=~/.fzf  " fzf
 
 if exists('g:vscode')
     " VSCode extension specific settings.
