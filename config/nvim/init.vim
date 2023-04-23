@@ -14,16 +14,14 @@ set ignorecase
 set ruler
 set nrformats-=octal  " dont count in octal
 set mouse=a
-
-" Splits
-nmap <leader>es :sp <C-R>=expand('%:h').'./'<cr>
-nmap <leader>ev :vsp <C-R>=expand('%:h').'./'<cr>
+let mapleader = " "
 
 if exists('g:vscode')
-    -- VSCode extension specific settings.
+    " VSCode extension specific settings.
 else
     " ordinary Neovim
     lua require('packages')
     lua require('lsp')
     lua require('typescript')
+    lua require('mappings')
 endif
