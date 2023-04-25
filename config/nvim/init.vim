@@ -22,7 +22,8 @@ if exists('g:vscode')
 else
     " ordinary Neovim
     lua require('packages')
+    lua require('netrw')
+    lua require('fzf')
     lua require('lsp')
     lua require('typescript')
-    lua require('mappings')
 endif

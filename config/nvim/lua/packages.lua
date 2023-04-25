@@ -17,14 +17,21 @@ packer.init({
 
 packer.startup(function()
   local use = use
-
   use 'neovim/nvim-lspconfig'
-
   use 'nvim-treesitter/nvim-treesitter'
   use 'sheerun/vim-polyglot'
-  use {'prettier/vim-prettier', run = 'yarn install' }
-  use { 'junegunn/fzf' }
+
+  -- lsp
+  use 'neovim/nvim-lspconfig'
+
+  -- fzf
+  use 'junegunn/fzf'
   use 'junegunn/fzf.vim'
+
+  -- typescript
+  use {'prettier/vim-prettier', run = 'npm install' }
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'MunifTanjim/eslint.nvim'
 
   end
 )
