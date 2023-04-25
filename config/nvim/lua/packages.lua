@@ -45,5 +45,9 @@ packer.startup(function()
   -- copilot
   use 'github/copilot.vim'
 
+  -- zettle
+  use 'vimwiki/vimwiki'
+  use 'michal-h21/vim-zettel'
+
   end
 )

@@ -26,4 +26,6 @@ else
     lua require('fzf')
     lua require('lsp')
     lua require('typescript')
+
+    source $HOME/.config/nvim/zettle.vim
 endif

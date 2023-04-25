@@ -163,7 +163,8 @@ export NVM_DIR="${HOME_DIR}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use default  # This loads nvm
 
 export PYTHONDONTWRITEBYTECODE=1
-export EDITOR=vim
+export EDITOR=nvim
+alias vi=nvim
 
 export WATSON_DIR="${HOME_DIR}/src/my-work-log"
 
