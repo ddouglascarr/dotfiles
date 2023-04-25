@@ -33,5 +33,8 @@ packer.startup(function()
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'MunifTanjim/eslint.nvim'
 
+  -- copilot
+  use 'github/copilot.vim'
+
   end
 )
