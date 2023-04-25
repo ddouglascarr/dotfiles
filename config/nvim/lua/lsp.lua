@@ -1,5 +1,6 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
+local navbuddy = require("nvim-navbuddy")
 
 lspconfig.pyright.setup {}
 lspconfig.rust_analyzer.setup {
@@ -8,6 +9,8 @@ lspconfig.rust_analyzer.setup {
     ['rust-analyzer'] = {},
   },
 }
+
+vim.keymap.set('n', '<leader>b', navbuddy.open)
 
 
 -- Global mappings.

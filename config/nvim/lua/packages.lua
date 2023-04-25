@@ -23,6 +23,15 @@ packer.startup(function()
 
   -- lsp
   use 'neovim/nvim-lspconfig'
+  use {
+    "SmiteshP/nvim-navbuddy",
+    requires = {
+        "neovim/nvim-lspconfig",
+        "SmiteshP/nvim-navic",
+        "MunifTanjim/nui.nvim",
+        "nvim-telescope/telescope.nvim" -- Optional
+    }
+  }
 
   -- fzf
   use 'junegunn/fzf'

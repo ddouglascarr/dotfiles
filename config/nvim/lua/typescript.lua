@@ -1,6 +1,12 @@
 -- lsp
 local lspconfig = require'lspconfig'
-lspconfig.tsserver.setup{}
+local navbuddy = require("nvim-navbuddy")
+
+lspconfig.tsserver.setup{
+  on_attach = function(client, bufnr)
+      navbuddy.attach(client, bufnr)
+  end
+}
 
 -- prettier
 vim.cmd [[
