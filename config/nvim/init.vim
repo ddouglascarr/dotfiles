@@ -17,6 +17,7 @@ set nrformats-=octal  " dont count in octal
 set mouse=a
 set rtp+=~/.fzf  " fzf
 set shell=/opt/homebrew/bin/bash
+set clipboard=unnamed
 
 if exists('g:vscode')
     " VSCode extension specific settings.
@@ -28,6 +29,7 @@ else
     lua require('lsp')
     lua require('lua-ls')
     lua require('typescript')
+    lua require('snippets')
 
     source $HOME/.config/nvim/zettle.vim
 endif

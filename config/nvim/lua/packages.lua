@@ -48,5 +48,9 @@ packer.startup(function()
   use 'vimwiki/vimwiki'
   use 'michal-h21/vim-zettel'
 
+  -- snippets
+
+  use 'dcampos/nvim-snippy'
+
   end
 )
