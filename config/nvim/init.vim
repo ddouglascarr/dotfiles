@@ -25,6 +25,7 @@ else
     lua require('netrw')
     lua require('fzf')
     lua require('lsp')
+    lua require('lua-ls')
     lua require('typescript')
 
     source $HOME/.config/nvim/zettle.vim

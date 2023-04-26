@@ -2,6 +2,8 @@
 local lspconfig = require('lspconfig')
 local navbuddy = require("nvim-navbuddy")
 
+-- see lspconfig-all for list of servers
+
 lspconfig.pyright.setup {}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
