@@ -7,6 +7,7 @@ export PACKAGES="\
   ffmpeg \
   htop \
   jq \
+  lua-language-server \
   mercurial \
   postgresql@13 \
   tmux \

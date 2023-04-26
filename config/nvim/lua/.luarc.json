@@ -1,0 +1,27 @@
+{
+    "workspace.library": [
+        "/Users/daniel/.config/nvim",
+        "/Users/daniel/.local/share/nvim/site",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/copilot.vim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/eslint.nvim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/fzf",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/fzf.vim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/nui.nvim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-navbuddy",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-navic",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-polyglot",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-prettier",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-zettel",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/vimwiki",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/opt/packer.nvim",
+        "/opt/homebrew/Cellar/neovim/0.8.3/share/nvim/runtime",
+        "/opt/homebrew/Cellar/neovim/0.8.3/lib/nvim",
+        "/Users/daniel/.local/share/nvim/site/pack/packer/start/vim-polyglot/after",
+        "/Users/daniel/.fzf",
+        "${3rd}/luassert/library"
+    ]
+}
