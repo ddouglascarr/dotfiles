@@ -205,3 +205,7 @@ fi
 if [[ $(uname -m) == 'x86_64' ]]; then
   eval "$(/usr/local/Homebrew/bin/brew shellenv)"
 fi
+
+if [ -f ${HOME}/secret.sh ]; then
+  . ${HOME}/secret.sh
+fi
