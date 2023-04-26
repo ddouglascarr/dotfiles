@@ -17,7 +17,6 @@ packer.init({
 
 packer.startup(function()
   local use = use
-  use 'neovim/nvim-lspconfig'
   use 'nvim-treesitter/nvim-treesitter'
   use 'sheerun/vim-polyglot'
 
