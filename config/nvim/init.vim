@@ -26,6 +26,7 @@ else
     lua require('packages')
     lua require('netrw')
     lua require('fzf')
+    source $HOME/.config/nvim/copilot.vim
     lua require('lsp')
     lua require('lua-ls')
     lua require('typescript')

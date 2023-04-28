@@ -31,6 +31,8 @@ packer.startup(function()
         "nvim-telescope/telescope.nvim" -- Optional
     }
   }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
 
   -- fzf
   use 'junegunn/fzf'
@@ -51,6 +53,9 @@ packer.startup(function()
   -- snippets
 
   use 'dcampos/nvim-snippy'
+  use 'dcampos/cmp-snippy'
+  -- use 'honza/vim-snippets'
+  use 'hrsh7th/nvim-cmp'
 
   end
 )

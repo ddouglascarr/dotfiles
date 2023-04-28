@@ -150,7 +150,7 @@ fi
 #   fi
 # fi
 
-export PATH=/usr/local/go/bin:$PATH:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin
+export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin
 
 # Runtime setup
 # if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
