@@ -1,0 +1,14 @@
+extends typescript
+
+snippet constr "const react component"
+	const ${1:name} = (props: ${2: Props}) => {
+		return (
+			${0}
+		)
+	} 
+
+snippet constrc "const react component compact"
+	const ${1:name} = (props: ${2: Props}) => (
+		${0}
+	)
+

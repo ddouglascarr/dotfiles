@@ -32,7 +32,6 @@ packer.startup(function()
     }
   }
   use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
 
   -- fzf
   use 'junegunn/fzf'
@@ -51,10 +50,12 @@ packer.startup(function()
   use 'michal-h21/vim-zettel'
 
   -- snippets
-
   use 'dcampos/nvim-snippy'
   use 'dcampos/cmp-snippy'
   -- use 'honza/vim-snippets'
+
+  -- completion (integrations are under the things they integrate with
+  use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
 
   end
