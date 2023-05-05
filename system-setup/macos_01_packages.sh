@@ -4,6 +4,7 @@ set -euo pipefail
 export PACKAGES="\
   bash \
   bib-tool \
+  deno \
   ffmpeg \
   htop \
   jq \
@@ -13,7 +14,6 @@ export PACKAGES="\
   tmux \
   the_silver_searcher \
   rar \
-  virtualbox \
   weechat \
   wget \
 "

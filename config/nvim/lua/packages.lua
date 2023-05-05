@@ -58,5 +58,12 @@ packer.startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/nvim-cmp'
 
+  -- ChatGPT
+  use({
+    'terror/chatgpt.nvim',
+    run = 'pip3 install -r requirements.txt'
+  })
+
+
   end
 )
