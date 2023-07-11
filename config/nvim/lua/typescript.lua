@@ -6,19 +6,26 @@ local cmp_nvim_lsp = require('cmp_nvim_lsp')
 lspconfig.tsserver.setup{
   on_attach = function(client, bufnr)
       navbuddy.attach(client, bufnr)
+      -- prettier
+      vim.cmd [[
+        augroup PrettierOnSave
+          autocmd!
+          autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx :Prettier
+        augroup END
+      ]]
   end,
   capabilities = cmp_nvim_lsp.default_capabilities(),
   root_dir = lspconfig.util.root_pattern("package.json"),
   single_file_support = false,
 }
 
--- prettier
-vim.cmd [[
-  augroup PrettierOnSave
-    autocmd!
-    autocmd BufWritePre *.js,*.jsx,*.ts,*.tx :Prettier
-  augroup END
-]]
+lspconfig.denols.setup {
+  on_attach = function(client, bufnr)
+      navbuddy.attach(client, bufnr)
+  end,
+  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+}
+
 
 -- eslint
 local null_ls = require("null-ls")
