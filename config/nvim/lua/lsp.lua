@@ -12,8 +12,9 @@ lspconfig.rust_analyzer.setup {
     ['rust-analyzer'] = {},
   },
 }
+lspconfig.sqlls.setup{}
 
-vim.keymap.set('n', '<leader>b', navbuddy.open)
+vim.keymap.set('n', '<leader>j', navbuddy.open)
 
 
 -- Global mappings.
