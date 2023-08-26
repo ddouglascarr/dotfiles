@@ -1,0 +1,51 @@
+#!/usr/bin/env sh
+set -euo pipefail
+TORRENT_DIR=/usr/local/share/media/torrents
+DLNA_DIR=/usr/local/share/media/dlna
+
+doas pkg_add -v \
+  minidlna \
+  openmdns \
+  transmission \
+  wireguard-tools
+
+# dlna
+
+doas groupadd mediashare
+doas usermod -G mediashare daniel
+doas usermod -G mediashare _minidlna
+
+doas mkdir -p ${DNLA_DIR}
+doas chgrp mediashare ${DLNA_DIR}
+doas chmod 775 ${DLNA_DIR}
+
+doas rcctl enable minidlna
+
+# dnsd
+
+# settings are in rc.conf.local
+if grep -q '^multicast=' /etc/rc.conf.local; then
+    doas sed -i 's/^multicast=.*/multicast=YES/' /etc/rc.conf.local
+else
+    echo "multicast=YES" | doas tee -a /etc/rc.conf.local
+fi
+
+doas rcctl set mdnsd flags re0
+doas rcctl enable mdnsd
+
+
+# transmission
+
+
+doas mkdir -p "${TORRENT_DIR}"
+doas chown _transmission "${TORRENT_DIR}"
+doas usermod -G mediashare _transmission
+
+doas rcctl set transmission_daemon flags "-a *.*.*.* -B --auth --username daniel --password u13chester --download-dir ${DLNA_DIR} --incomplete-dir ${TORRENT_DIR}"
+doas rcctl enable transmission_daemon
+
+
+# httpd
+
+# enabling httpd sets up the flags and the home dir
+doas rcctl enable httpd
