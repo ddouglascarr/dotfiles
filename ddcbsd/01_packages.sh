@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
+set -euo pipefail
 
 doas pkg_add -v \
   minidlna \
-  mdnsd
+  openmdns \
+  transmission \
+  wireguard-tools
+
