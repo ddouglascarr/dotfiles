@@ -4,6 +4,7 @@ TORRENT_DIR=/usr/local/share/media/torrents
 DLNA_DIR=/usr/local/share/media/dlna
 
 doas pkg_add -v \
+  git \
   minidlna \
   openmdns \
   transmission \
