@@ -8,4 +8,5 @@ doas tar -chf ./site.tar \
   /etc/relayd.conf \
   /etc/doas.conf \
   /etc/ssh \
-  etc/rc.firsttime  # script from this repo to be run after reboot
+  /var/www/htdocs/ \
+  install.site  # script from this repo to be run at end of install
