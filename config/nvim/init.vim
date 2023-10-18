@@ -30,7 +30,6 @@ else
     lua require('lsp')
     lua require('lua-ls')
     lua require('typescript')
-    lua require('deno')
     lua require('snippets')
 
     source $HOME/.config/nvim/zettle.vim

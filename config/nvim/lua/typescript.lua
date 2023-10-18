@@ -24,6 +24,7 @@ lspconfig.denols.setup {
       navbuddy.attach(client, bufnr)
   end,
   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+  lint = true,
 }
 
 
