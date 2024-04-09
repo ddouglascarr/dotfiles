@@ -159,8 +159,6 @@ export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/
   # source ~/src/dotfiles/bin/virtualenv.sh
 # fi
 
-export NVM_DIR="${HOME_DIR}/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use default  # This loads nvm
 
 export PYTHONDONTWRITEBYTECODE=1
 export EDITOR=nvim
@@ -205,6 +203,14 @@ fi
 if [[ $(uname -m) == 'x86_64' ]]; then
   eval "$(/usr/local/Homebrew/bin/brew shellenv)"
 fi
+
+# must be inited after homebrew
+export NVM_DIR="${HOME_DIR}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use default  # This loads nvm
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+# [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
 
 if [ -f ${HOME}/secret.sh ]; then
   . ${HOME}/secret.sh

@@ -15,7 +15,6 @@ lspconfig.tsserver.setup{
       ]]
   end,
   capabilities = cmp_nvim_lsp.default_capabilities(),
-  root_dir = lspconfig.util.root_pattern("package.json"),
   single_file_support = false,
 }
 
