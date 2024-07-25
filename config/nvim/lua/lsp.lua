@@ -5,7 +5,11 @@ local cmp = require('cmp')
 
 -- see lspconfig-all for list of servers
 
-lspconfig.pyright.setup {}
+lspconfig.pyright.setup {
+  on_attach = function(client, bufnr)
+        navbuddy.attach(client, bufnr)
+    end
+}
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
