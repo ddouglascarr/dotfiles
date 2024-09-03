@@ -150,17 +150,8 @@ fi
 #   fi
 # fi
 
-export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin:/opt/homebrew/opt/postgresql@13/bin
+export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/.venvs/sys/bin:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin:/opt/homebrew/opt/postgresql@13/bin
 
-# Runtime setup
-# if [ "${IN_NIX_SHELL:-nope}" == "nope" ]; then
-  # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-  # ~/src/dotfiles/bin/setup-tmux
-  # source ~/src/dotfiles/bin/virtualenv.sh
-# fi
-
-
-export PYTHONDONTWRITEBYTECODE=1
 export EDITOR=nvim
 alias vi=nvim
 
@@ -172,23 +163,9 @@ export WATSON_DIR="${HOME_DIR}/src/my-work-log"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 
-# nix
-# if [ -e ${HOME_DIR}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME_DIR}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-# if [ -e ${HOME_DIR}/.nix-profile/etc/profile.d/hm-session-vars.sh ]; then
-#   . ${HOME_DIR}/.nix-profile/etc/profile.d/hm-session-vars.sh
-# fi  # home manager
-
-
-
 # research
 export FZF_BIBTEX_SOURCES="${HOME_DIR}/research/bibliography.bib"
 export FZF_BIBTEX_CACHEDIR="${HOME_DIR}/research/.fzf-bibliography-cache"
-
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
 
 
 # git completion
@@ -211,7 +188,15 @@ export NVM_DIR="${HOME_DIR}/.nvm"
 # [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
 # [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
 
+# python: activate a venv called sys if it exists by default
+export PYTHONDONTWRITEBYTECODE=1
+if [ -f ${HOME}/.venvs/sys/bin/activate ]; then
+  VIRTUAL_ENV_DISABLE_PROMPT=1 . ${HOME}/.venvs/sys/bin/activate
+fi
 
 if [ -f ${HOME}/secret.sh ]; then
   . ${HOME}/secret.sh
 fi
+
+eval "$(frum init)"
+
