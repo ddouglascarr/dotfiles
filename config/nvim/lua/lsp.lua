@@ -18,6 +18,8 @@ lspconfig.rust_analyzer.setup {
 }
 lspconfig.sqlls.setup{}
 
+lspconfig.ruby_lsp.setup{}
+
 vim.keymap.set('n', '<leader>j', navbuddy.open)
 
 

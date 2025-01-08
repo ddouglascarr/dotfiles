@@ -6,6 +6,8 @@ export PACKAGES="\
   bib-tool \
   deno \
   ffmpeg \
+  git \
+  git-delta \
   htop \
   jq \
   lua-language-server \

@@ -3,7 +3,7 @@ local lspconfig = require'lspconfig'
 local navbuddy = require("nvim-navbuddy")
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-lspconfig.tsserver.setup{
+lspconfig.ts_ls.setup{
   on_attach = function(client, bufnr)
       navbuddy.attach(client, bufnr)
       -- prettier
@@ -25,6 +25,8 @@ lspconfig.denols.setup {
   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
   lint = true,
 }
+
+lspconfig.ruby_lsp.setup{}
 
 
 -- eslint
