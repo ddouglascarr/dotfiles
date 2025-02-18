@@ -1,0 +1,5 @@
+text/html; w3m -I %{charset} -T text/html; copiousoutput
+application/pdf; open -a Firefox %s; copiousoutput
+applica/pdf; open -a Firefox %s; copiousoutput
+image/*; open -a Firefox %s; copiousoutput
+
