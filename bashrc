@@ -150,9 +150,10 @@ fi
 #   fi
 # fi
 
-export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/.venvs/sys/bin:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin:/opt/homebrew/opt/postgresql@13/bin
+export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/.venvs/sys/bin:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin:/opt/homebrew/opt/postgresql@17/bin
 
 export EDITOR=nvim
+export BROWSER=chromium
 alias vi=nvim
 
 export WATSON_DIR="${HOME_DIR}/src/my-work-log"
@@ -167,6 +168,8 @@ export WATSON_DIR="${HOME_DIR}/src/my-work-log"
 export FZF_BIBTEX_SOURCES="${HOME_DIR}/research/bibliography.bib"
 export FZF_BIBTEX_CACHEDIR="${HOME_DIR}/research/.fzf-bibliography-cache"
 
+# homebrew
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # git completion
 if [ -f ~/src/dotfiles/bin/macos-git-completion.bash ]; then
@@ -211,3 +214,6 @@ export PATH="$PATH:/opt/homebrew/opt/php@8.2/sbin"
 
 # JAVA
 export JAVA_HOME=/opt/homebrew/Cellar/openjdk/23.0.1/
+
+# rust
+export PATH="$PATH:$HOME/.cargo/bin"

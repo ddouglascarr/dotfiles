@@ -43,7 +43,7 @@ packer.startup(function()
   use 'MunifTanjim/eslint.nvim'
 
   -- copilot
-  use 'github/copilot.vim'
+  -- use 'github/copilot.vim'
 
   -- zettle
   use 'vimwiki/vimwiki'
