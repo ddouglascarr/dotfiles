@@ -1,0 +1,9 @@
+shift + ctrl - b : open /Applications/Firefox.app/
+shift + ctrl - d : open -a "Google Chrome" 
+shift + ctrl - c : open -a "Zed"
+shift + ctrl - t : open -a "iTerm"
+shift + ctrl - m : open -a "Music"
+shift + ctrl - l : open -a "Ableton Live 12 Standard"
+shift + ctrl - z : open -a "Zotero"
+shift + ctrl - f : open -a "Figma"
+shift + ctrl - s : open -a "Syntorial"

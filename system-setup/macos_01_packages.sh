@@ -16,6 +16,7 @@ export PACKAGES="\
   tmux \
   the_silver_searcher \
   rar \
+  uv \
   weechat \
   wget \
 "
