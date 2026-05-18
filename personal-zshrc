@@ -1,0 +1,11 @@
+# my local zsh stuff, to be sourced from the generated one work gives me
+
+# vigpt takes stdin, saves to a temporary file, opens it in nvim, then sends
+# the text to lms chat configured for gpt-20b with blakes prompt
+# e.g. (from within an nvim :terminal
+#   $ mdtree ./foo.ts | vigpt
+vigpt() {
+  local tmpfile="/tmp/$(uuidgen).md"
+  cat > "$tmpfile"
+  nvim --server $NVIM --remote-expr "luaeval(\"loadfile(vim.fn.stdpath('config') .. '/lua/scripts/lmsgpt.lua')('$tmpfile')\")"
+}

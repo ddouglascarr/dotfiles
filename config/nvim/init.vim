@@ -16,7 +16,7 @@ set ruler
 set nrformats-=octal  " dont count in octal
 set mouse=a
 set rtp+=~/.fzf  " fzf
-set shell=/opt/homebrew/bin/bash
+" set shell=/opt/homebrew/bin/bash
 set clipboard=unnamed
 
 " mutt settings

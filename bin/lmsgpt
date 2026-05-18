@@ -1,0 +1,4 @@
+#!/bin/bash
+
+lms chat openai/gpt-oss-20b \
+  -s "$(cat ~/src/dotfiles/docs/blakes-gpt-20b-prompt.md)"
