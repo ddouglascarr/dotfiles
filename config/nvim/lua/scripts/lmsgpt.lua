@@ -15,3 +15,4 @@ vim.api.nvim_create_autocmd("BufWritePost", {
     end, 500)
   end
 })
+
