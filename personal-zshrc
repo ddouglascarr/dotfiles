@@ -9,3 +9,8 @@ vigpt() {
   cat > "$tmpfile"
   nvim --server $NVIM --remote-expr "luaeval(\"loadfile(vim.fn.stdpath('config') .. '/lua/scripts/lmsgpt.lua')('$tmpfile')\")"
 }
+
+export EDITOR=nvim
+export vi=nvim
+
+export PATH="${PATH}:${HOME}/go/bin/"
