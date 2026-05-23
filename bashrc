@@ -9,7 +9,12 @@ case $- in
       *) return;;
 esac
 
-HOME_DIR="/Users/daniel"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    HOME_DIR="/Users/daniel"
+else
+    HOME_DIR="${HOME}"
+fi
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -200,20 +205,6 @@ fi
 if [ -f ${HOME}/secret.sh ]; then
   . ${HOME}/secret.sh
 fi
-
-# ruby
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
-
-# PHP
-# export LDFLAGS="-L/opt/homebrew/opt/php@8.2/lib"
-# export CPPFLAGS="-I/opt/homebrew/opt/php@8.2/include"
-export PATH="$PATH:/opt/homebrew/opt/php@8.2/bin"
-export PATH="$PATH:/opt/homebrew/opt/php@8.2/sbin"
-
-# JAVA
-export JAVA_HOME=/opt/homebrew/Cellar/openjdk/23.0.1/
 
 # rust
 export PATH="$PATH:$HOME/.cargo/bin"
