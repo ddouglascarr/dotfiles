@@ -1,6 +1,7 @@
 # ddc dotfiles
 
-These are my personal dotfiles.
+These are my personal dotfiles. I'm setting up a new linux desktop system on 
+Fedora, and will do all agent work within this repo. 
 
 
 ## Requirements
@@ -22,6 +23,7 @@ These are the key folders I'll be modifying.
 - `docs`: random markdown docs, do not touch
 - `system-setup`: scripts to setup a new system
 - `tmux`: tmux config (unsued for a while)
+- `bin`: personal shell scripts
 
 
 ## Rules
@@ -30,3 +32,4 @@ These are the key folders I'll be modifying.
 - be brief
 - do not delete comments unless asked
 - do not write comments unless asked
+- you MAY modify the system outside this repo, but ask first. 
