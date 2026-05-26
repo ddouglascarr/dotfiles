@@ -1,5 +1,5 @@
 set $mod Mod4
-set $term alacritty
+set $term env LIBGL_ALWAYS_SOFTWARE=1 alacritty
 set $menu wofi --show drun
 set $lock swaylock -f -c 111111
 
@@ -22,7 +22,7 @@ input type:touchpad {
     natural_scroll enabled
 }
 
-output * bg #111111 solid_color
+output * mode --custom 1920x1080@60Hz bg #111111 solid_color
 
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
