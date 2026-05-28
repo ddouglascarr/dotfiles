@@ -1,9 +1,8 @@
 -- lsp
-local lspconfig = require'lspconfig'
 local navbuddy = require("nvim-navbuddy")
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
-lspconfig.ts_ls.setup{
+vim.lsp.config('ts_ls', {
   on_attach = function(client, bufnr)
       navbuddy.attach(client, bufnr)
       -- prettier
@@ -16,24 +15,36 @@ lspconfig.ts_ls.setup{
   end,
   capabilities = cmp_nvim_lsp.default_capabilities(),
   single_file_support = false,
-}
+})
 
-lspconfig.denols.setup {
+vim.lsp.config('denols', {
   on_attach = function(client, bufnr)
       navbuddy.attach(client, bufnr)
   end,
-  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+  root_dir = function(bufnr, on_dir)
+    local root = vim.fs.root(bufnr, {"deno.json", "deno.jsonc"})
+    if root then
+      on_dir(root)
+    end
+  end,
   lint = true,
-}
+})
 
-lspconfig.ruby_lsp.setup{}
+vim.lsp.config('ruby_lsp', {})
+vim.lsp.enable({'ts_ls', 'denols', 'ruby_lsp'})
 
 
 -- eslint
-local null_ls = require("null-ls")
+local tbl_add_reverse_lookup = vim.tbl_add_reverse_lookup
+local tbl_islist = vim.tbl_islist
+vim.tbl_add_reverse_lookup = function(tbl)
+  for k, v in pairs(tbl) do
+    tbl[v] = k
+  end
+  return tbl
+end
+vim.tbl_islist = vim.islist
 local eslint = require("eslint")
-
-null_ls.setup()
 
 eslint.setup({
   bin = 'eslint', -- or `eslint_d`
@@ -54,4 +65,5 @@ eslint.setup({
     run_on = "type", -- or `save`
   },
 })
-
+vim.tbl_add_reverse_lookup = tbl_add_reverse_lookup
+vim.tbl_islist = tbl_islist

@@ -1,23 +1,23 @@
 -- Setup language servers.
-local lspconfig = require('lspconfig')
 local navbuddy = require("nvim-navbuddy")
 local cmp = require('cmp')
 
 -- see lspconfig-all for list of servers
 
-lspconfig.pyright.setup {
+vim.lsp.config('pyright', {
   on_attach = function(client, bufnr)
         navbuddy.attach(client, bufnr)
     end
-}
-lspconfig.rust_analyzer.setup {
+})
+vim.lsp.config('rust_analyzer', {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
     ['rust-analyzer'] = {},
   },
-}
-lspconfig.sqlls.setup{}
-lspconfig.ruby_lsp.setup{}
+})
+vim.lsp.config('sqlls', {})
+vim.lsp.config('ruby_lsp', {})
+vim.lsp.enable({'pyright', 'rust_analyzer', 'sqlls', 'ruby_lsp'})
 
 vim.keymap.set('n', '<leader>j', navbuddy.open)
 
@@ -92,4 +92,3 @@ cmp.setup({
     { name = 'buffer' },
   })
 })
-

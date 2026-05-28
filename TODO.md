@@ -1,0 +1,1 @@
+- rework eslint stuff in nvim typescript.lua
