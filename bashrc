@@ -158,6 +158,7 @@ fi
 export PATH=/usr/local/go/bin:${PATH}:${HOME_DIR}/.venvs/sys/bin:${HOME_DIR}/Android/Sdk/tools:${HOME_DIR}/Android/Sdk/platform-tools:${HOME_DIR}/src/my-utils:${HOME_DIR}/.local/bin:${HOME_DIR}/src/dotfiles/bin:${HOME_DIR}/go/bin:${HOME_DIR}/.cargo/bin:${HOME_DIR}/.cask/bin:/opt/homebrew/opt/postgresql@17/bin:${HOME_DIR}/.local/npm/bin
 
 export EDITOR=nvim
+export NVIM_LOG_FILE=/tmp/nvim.log
 export BROWSER=chromium
 alias vi=nvim
 

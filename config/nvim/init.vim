@@ -17,6 +17,33 @@ set nrformats-=octal  " dont count in octal
 set mouse=a
 set rtp+=~/.fzf  " fzf
 " set shell=/opt/homebrew/bin/bash
+if executable('pbcopy') && executable('pbpaste')
+    let g:clipboard = {
+        \ 'name': 'pbcopy',
+        \ 'copy': {
+        \     '+': ['pbcopy'],
+        \     '*': ['pbcopy'],
+        \ },
+        \ 'paste': {
+        \     '+': ['pbpaste'],
+        \     '*': ['pbpaste'],
+        \ },
+        \ 'cache_enabled': 0,
+        \ }
+elseif executable('wl-copy') && executable('wl-paste')
+    let g:clipboard = {
+        \ 'name': 'wl-clipboard',
+        \ 'copy': {
+        \     '+': ['wl-copy', '--foreground', '--type', 'text/plain'],
+        \     '*': ['wl-copy', '--foreground', '--type', 'text/plain'],
+        \ },
+        \ 'paste': {
+        \     '+': ['wl-paste', '--no-newline'],
+        \     '*': ['wl-paste', '--no-newline'],
+        \ },
+        \ 'cache_enabled': 0,
+        \ }
+endif
 set clipboard=unnamed
 
 " mutt settings
