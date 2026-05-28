@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Chromium Dev
+Exec=chromium-browser --class=chromium-dev --no-default-browser-check --no-first-run --user-data-dir=/home/ddc/.config/chromium-dev-profile %U
+Terminal=false
+Icon=chromium-browser
+Categories=Network;WebBrowser;
+StartupNotify=true
+StartupWMClass=chromium-dev
+MimeType=x-scheme-handler/http;x-scheme-handler/https;text/html;
