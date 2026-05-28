@@ -5,8 +5,6 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
 SWAY_CONFIG_SRC="${REPO_ROOT}/config/sway"
 SWAY_CONFIG_DST="${HOME}/.config/sway"
-AUTOLOGIN_USER="$(id -un)"
-SDDM_AUTOLOGIN_CONF="/etc/sddm.conf.d/90-sway-autologin.conf"
 SWAY_ENV_CONF="/etc/environment.d/90-sway-utm.conf"
 
 PACKAGES=(
@@ -33,10 +31,6 @@ echo "Linking Sway config..."
 mkdir -p "${HOME}/.config"
 ln -sfnT "${SWAY_CONFIG_SRC}" "${SWAY_CONFIG_DST}"
 
-echo "Configuring SDDM autologin for ${AUTOLOGIN_USER}..."
-sudo install -d -m 0755 /etc/sddm.conf.d
-printf '[Autologin]\nUser=%s\nSession=sway.desktop\n' "${AUTOLOGIN_USER}" | sudo tee "${SDDM_AUTOLOGIN_CONF}" >/dev/null
-
 echo "Configuring UTM/wlroots environment..."
 sudo install -d -m 0755 /etc/environment.d
 printf 'WLR_NO_HARDWARE_CURSORS=1\n' | sudo tee "${SWAY_ENV_CONF}" >/dev/null
@@ -44,5 +38,4 @@ printf 'WLR_NO_HARDWARE_CURSORS=1\n' | sudo tee "${SWAY_ENV_CONF}" >/dev/null
 echo
 echo "Done."
 echo "Sway config: ${SWAY_CONFIG_DST} -> ${SWAY_CONFIG_SRC}"
-echo "SDDM autologin: ${SDDM_AUTOLOGIN_CONF}"
 echo "Sway environment: ${SWAY_ENV_CONF}"

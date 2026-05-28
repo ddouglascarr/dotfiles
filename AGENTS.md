@@ -32,4 +32,5 @@ These are the key folders I'll be modifying.
 - be brief
 - do not delete comments unless asked
 - do not write comments unless asked
+- reading git state is fine, but do not write to git; staging, committing, rebasing, and other index/history changes are done by me
 - you MAY modify the system outside this repo, but ask first. 
