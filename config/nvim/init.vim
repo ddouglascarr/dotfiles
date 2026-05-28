@@ -34,8 +34,8 @@ elseif executable('wl-copy') && executable('wl-paste')
     let g:clipboard = {
         \ 'name': 'wl-clipboard',
         \ 'copy': {
-        \     '+': ['wl-copy', '--foreground', '--type', 'text/plain'],
-        \     '*': ['wl-copy', '--foreground', '--type', 'text/plain'],
+        \     '+': ['wl-copy', '--type', 'text/plain'],
+        \     '*': ['wl-copy', '--type', 'text/plain'],
         \ },
         \ 'paste': {
         \     '+': ['wl-paste', '--no-newline'],
