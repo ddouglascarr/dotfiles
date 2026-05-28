@@ -22,6 +22,10 @@ input type:touchpad {
     natural_scroll enabled
 }
 
+input type:pointer {
+    natural_scroll enabled
+}
+
 exec_always /home/ddc/src/dotfiles/bin/sway-utm-display mbp14
 
 bindsym $mod+Return exec $term
@@ -61,16 +65,22 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
+set $ws1 "1:term"
+set $ws2 "2:code"
+set $ws3 "3:dev-browser"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10:browser"
+
+workspace $ws1 output Virtual-1
+assign [app_id="chromium-browser"] $ws10
+assign [app_id="chromium-dev"] $ws3
+exec chromium-browser --class=chromium-browser --no-default-browser-check --no-first-run
+exec chromium-browser --class=chromium-dev --no-default-browser-check --no-first-run --user-data-dir="${HOME}/.config/chromium-dev-profile"
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -119,12 +129,12 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym Print exec grim -g "$(slurp)" - | wl-copy
-bindsym Shift+Print exec grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
+bindsym $mod+F12 exec grim -g "$(slurp)" - | wl-copy
+bindsym Shift+$mod+F12 exec grim ~/Pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
 
-default_border pixel 2
-default_floating_border pixel 2
-gaps inner 6
+default_border pixel 1 
+default_floating_border pixel 1 
+gaps inner 1 
 gaps outer 0
 
 client.focused #4c7899 #285577 #ffffff #2e9ef4 #285577
