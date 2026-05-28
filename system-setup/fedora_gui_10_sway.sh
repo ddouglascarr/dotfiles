@@ -17,7 +17,6 @@ PACKAGES=(
   slurp
   sway
   swayidle
-  swaylock
   waybar
   wl-clipboard
   wofi
