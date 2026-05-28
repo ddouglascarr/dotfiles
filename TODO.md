@@ -1,1 +1,2 @@
 - rework eslint stuff in nvim typescript.lua
+- disable Retina option in UTM

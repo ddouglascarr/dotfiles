@@ -1,0 +1,23 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "memory",
+    "clock"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true
+  },
+  "memory": {
+    "interval": 5,
+    "format": "mem {percentage}%"
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%Y-%m-%d %H:%M:%S}"
+  }
+}
