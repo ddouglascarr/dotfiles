@@ -10,7 +10,7 @@ SDDM_AUTOLOGIN_CONF="/etc/sddm.conf.d/90-sway-autologin.conf"
 SWAY_ENV_CONF="/etc/environment.d/90-sway-utm.conf"
 
 PACKAGES=(
-  alacritty
+  foot
   brightnessctl
   grim
   mako
