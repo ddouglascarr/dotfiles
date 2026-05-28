@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Sets the display size for sway within UTM
+
+profile="${1:-mbp14}"
+
+swaymsg output Unknown-1 disable >/dev/null
+
+case "${profile}" in
+  mbp14)
+    swaymsg -- output Virtual-1 mode --custom 3024x1964@60Hz scale 2 position 0 0 >/dev/null
+    ;;
+  4k)
+    swaymsg output Virtual-1 mode 3840x2160@60Hz scale 2 position 0 0 >/dev/null
+    ;;
+  *)
+    printf 'usage: %s [mbp14|4k]\n' "$0" >&2
+    exit 2
+    ;;
+esac

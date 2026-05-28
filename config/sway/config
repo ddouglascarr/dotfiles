@@ -22,14 +22,16 @@ input type:touchpad {
     natural_scroll enabled
 }
 
-output * mode --custom 1920x1080@60Hz bg #111111 solid_color
+exec_always /home/ddc/src/dotfiles/bin/sway-utm-display mbp14
 
 bindsym $mod+Return exec $term
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway?' -b 'Exit' 'swaymsg exit'
-bindsym $mod+Shift+l exec $lock
+bindsym $mod+Ctrl+l exec $lock
+bindsym $mod+Ctrl+m exec /home/ddc/src/dotfiles/bin/sway-utm-display mbp14
+bindsym $mod+Ctrl+4 exec /home/ddc/src/dotfiles/bin/sway-utm-display 4k
 
 bindsym $mod+h focus left
 bindsym $mod+j focus down
