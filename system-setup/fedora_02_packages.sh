@@ -2,9 +2,22 @@
 set -euo pipefail
 
 export PACKAGES="\
+  bibtool \
+  bmake \
+  cmake \
+  curl \
+  ffmpeg \
+  git \
   golang \
+  jq \
   nvim \
+  openvpn \
+  python-uv \
+  postgresql-server \
+  tmux \
   the_silver_searcher \
+  unrar \
+  weechat \
 "
 
 echo "--- Installing packages"
