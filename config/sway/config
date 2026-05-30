@@ -9,6 +9,7 @@ exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 exec mako
 exec_always sh -c 'pkill waybar; waybar'
+exec_always pactl set-sink-volume @DEFAULT_SINK@ 100%
 
 input type:keyboard {
     repeat_delay 250

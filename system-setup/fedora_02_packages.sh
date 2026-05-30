@@ -10,8 +10,10 @@ export PACKAGES="\
   git \
   golang \
   jq \
+  nodejs \
   nvim \
   openvpn \
+  pnpm \
   python-uv \
   postgresql-server \
   tmux \
