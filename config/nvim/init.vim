@@ -64,6 +64,7 @@ else
     lua require('lsp')
     lua require('lua-ls')
     lua require('typescript')
+    lua require('golang')
     lua require('snippets')
     lua require('lms')
 

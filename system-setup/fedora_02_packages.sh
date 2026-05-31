@@ -14,6 +14,7 @@ export PACKAGES="\
   nvim \
   openvpn \
   pnpm \
+  podman \
   python-uv \
   postgresql-server \
   tmux \
