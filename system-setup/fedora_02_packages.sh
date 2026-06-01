@@ -8,7 +8,6 @@ export PACKAGES="\
   curl \
   ffmpeg \
   git \
-  golang \
   jq \
   nodejs \
   nvim \
