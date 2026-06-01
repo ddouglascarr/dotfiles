@@ -1,0 +1,11 @@
+layout {
+    tab name="term" {
+        pane split_direction="vertical" {
+            pane size="50%"
+            pane stacked=true {
+                pane expanded=true
+                pane
+            }
+        }
+    }
+}
