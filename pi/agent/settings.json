@@ -1,0 +1,6 @@
+{
+  "defaultProvider": "lmstudio",
+  "defaultModel": "google/gemma-4-26b-a4b-qat",
+  "lastChangelogVersion": "0.79.6",
+  "theme": "dark"
+}

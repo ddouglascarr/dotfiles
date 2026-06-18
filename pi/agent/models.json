@@ -1,0 +1,33 @@
+{
+  "providers": {
+    "lmstudio": {
+      "baseUrl": "http://192.168.64.1:1234/v1",
+      "api": "openai-completions",
+      "apiKey": "lmstudio",
+      "compat": {
+        "supportsDeveloperRole": false,
+        "supportsReasoningEffort": false
+      },
+      "models": [
+        {
+          "id": "google/gemma-4-26b-a4b-qat",
+          "name": "Gemma 4 26B QAT (Local)",
+          "reasoning": false,
+          "input": ["text"],
+          "contextWindow": 32000,
+          "maxTokens": 16384,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        },
+        {
+          "id": "openai/gpt-oss-20b",
+          "name": "GPT OSS 20B (Local)",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 32000,
+          "maxTokens": 16384,
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+        }
+      ]
+    }
+  }
+}
