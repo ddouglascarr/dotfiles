@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+tmpfile="$(mktemp).md"
+cat > "$tmpfile"
+  nvim --server $NVIM --remote-expr "luaeval(\"loadfile(vim.fn.stdpath('config') .. '/lua/scripts/pigpt.lua')('$tmpfile')\")"
