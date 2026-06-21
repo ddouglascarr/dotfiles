@@ -17,3 +17,5 @@ vim.lsp.config('gopls', {
 })
 
 vim.lsp.enable('gopls')
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "LSP rename" })
+
