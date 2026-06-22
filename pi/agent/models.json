@@ -1,5 +1,21 @@
 {
   "providers": {
+    "openrouter": {
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "apiKey": "$OPENROUTER_API_KEY",
+      "api": "openai-completions",
+      "models": [
+        {
+          "id": "openrouter/gpt-oss-120b",
+          "name": "GPT OSS 120B (OpenRouter)",
+          "reasoning": true,
+          "input": ["text"],
+          "contextWindow": 32000,
+          "maxTokens": 16384,
+          "cost": {"input":0,"output":0,"cacheRead":0,"cacheWrite":0}
+        }
+      ]
+    },
     "lmstudio": {
       "baseUrl": "http://192.168.64.1:1234/v1",
       "api": "openai-completions",
@@ -16,7 +32,7 @@
           "input": ["text"],
           "contextWindow": 32000,
           "maxTokens": 16384,
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "cost": {"input":0,"output":0,"cacheRead":0,"cacheWrite":0}
         },
         {
           "id": "openai/gpt-oss-20b",
@@ -25,7 +41,7 @@
           "input": ["text"],
           "contextWindow": 32000,
           "maxTokens": 16384,
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "cost": {"input":0,"output":0,"cacheRead":0,"cacheWrite":0}
         }
       ]
     }

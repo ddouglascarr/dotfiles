@@ -1,6 +1,7 @@
 {
-  "defaultProvider": "lmstudio",
-  "defaultModel": "google/gemma-4-26b-a4b-qat",
-  "lastChangelogVersion": "0.79.6",
-  "theme": "dark"
+  "defaultProvider": "openrouter",
+  "defaultModel": "openai/gpt-oss-120b",
+  "lastChangelogVersion": "0.79.9",
+  "theme": "dark",
+  "defaultThinkingLevel": "medium"
 }
