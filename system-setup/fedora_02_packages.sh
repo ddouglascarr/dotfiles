@@ -8,6 +8,7 @@ export PACKAGES="\
   curl \
   ffmpeg \
   git \
+  git-delta \
   jq \
   nodejs \
   nvim \

@@ -6,6 +6,7 @@
     conflictstyle = diff3
 
 [diff]
+  tool = delta
   colorMoved = default
   line-numbers = true
 
@@ -14,7 +15,7 @@
 
 [core]
 	autocrlf = false
-#  pager = delta
+  pager = delta
 
 [delta]
   navigate = true    # use n and N to move between diff sections
