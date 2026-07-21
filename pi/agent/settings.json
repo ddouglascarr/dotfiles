@@ -1,7 +1,7 @@
 {
   "defaultProvider": "openrouter",
-  "defaultModel": "openai/gpt-oss-120b",
-  "lastChangelogVersion": "0.79.9",
+  "defaultModel": "z-ai/glm-5.2",
+  "lastChangelogVersion": "0.79.10",
   "theme": "dark",
-  "defaultThinkingLevel": "medium"
+  "defaultThinkingLevel": "minimal"
 }
