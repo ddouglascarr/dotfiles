@@ -141,3 +141,12 @@ client.unfocused #333333 #222222 #888888 #292d2e #222222
 input "type:keyboard" {
     xkb_options caps:escape
 }
+
+input "type:touchpad" {
+    tap enabled
+    natural_scroll disabled 
+}
+
+input "type:pointer" {
+    natural_scroll disabled 
+}

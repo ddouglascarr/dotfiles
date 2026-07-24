@@ -5,19 +5,22 @@
     "sway/workspaces"
   ],
   "modules-right": [
-    "memory",
+    "battery",
     "clock"
   ],
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true
   },
-  "memory": {
+  "battery": {
     "interval": 5,
-    "format": "mem {percentage}%"
+    "format": "🔋 {capacity}%",
+    "format-discharging": "🔋 {capacity}%",
+    "format-charging": "⚡ {capacity}%",
+    "format-full": "🔌 {capacity}%"
   },
   "clock": {
-    "interval": 1,
-    "format": "{:%Y-%m-%d %H:%M:%S}"
+    "interval": 5,
+    "format": "{:%Y-%m-%d %H:%M}"
   }
 }
