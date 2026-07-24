@@ -137,3 +137,7 @@ gaps outer 0
 
 client.focused #4c7899 #285577 #ffffff #2e9ef4 #285577
 client.unfocused #333333 #222222 #888888 #292d2e #222222
+
+input "type:keyboard" {
+    xkb_options caps:escape
+}
