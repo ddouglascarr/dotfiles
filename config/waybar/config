@@ -5,6 +5,7 @@
     "sway/workspaces"
   ],
   "modules-right": [
+    "pulseaudio",
     "battery",
     "clock"
   ],
@@ -22,5 +23,9 @@
   "clock": {
     "interval": 5,
     "format": "{:%Y-%m-%d %H:%M}"
+  },
+  "pulseaudio": {
+    "format": "🔈 {volume}%",
+    "format-muted": "🔇"
   }
 }

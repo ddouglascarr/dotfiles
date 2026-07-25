@@ -20,6 +20,7 @@ export PACKAGES="\
   tmux \
   the_silver_searcher \
   unrar \
+  wireguard-tools \
   weechat \
 "
 
